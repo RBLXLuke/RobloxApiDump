@@ -1,0 +1,40 @@
+Version 596 (LIVE)
+
+Added Class AccessoryDescription : Instance [NotBrowsable]
+	Added Property Enum.AccessoryType AccessoryDescription.AccessoryType
+	Added Property int64 AccessoryDescription.AssetId
+	Added Property Instance AccessoryDescription.Instance
+	Added Property bool AccessoryDescription.IsLayered
+	Added Property int AccessoryDescription.Order
+	Added Property float AccessoryDescription.Puffiness
+
+Added Class CreationDBService : Instance [NotCreatable] [Service] [NotReplicated]
+
+Added Class ReflectionService : Instance [NotCreatable] [Service] [NotReplicated]
+	Added Function Array ReflectionService:GetPropertyNames(string name) {RobloxScriptSecurity}
+
+Added Property CFrame Animator.RootMotion [ReadOnly] [NotBrowsable]
+Added Property float Animator.RootMotionWeight [ReadOnly] [NotBrowsable]
+Added Property bool RootImportData.ValidateUgcBody
+Added Property bool TextChatCommand.AutocompleteVisible
+Added Property Enum.EditorLiveScripting Workspace.EditorLiveScripting [NotScriptable]
+
+Added Function bool AppUpdateService:CanPerformBinaryUpdate() {RobloxScriptSecurity}
+Added Function Secret HttpService:GetSecret(string key) {🧬Safe}
+Added Function string TutorialService:GetTutorialIDToLaunch() {RobloxScriptSecurity}
+Added Function bool TutorialService:HideOnlyNamedWidgets(string configurationLabel) {RobloxScriptSecurity}
+Added Function bool TutorialService:ShowOnlyNamedWidgets(string configurationLabel) {RobloxScriptSecurity}
+Added Function bool UGCValidationService:ValidateUVValuesInReference(Array referenceValues, string meshId) {RobloxScriptSecurity} [Yields]
+
+Added Enum EditorLiveScripting
+	Added EnumItem EditorLiveScripting.Default : 0
+	Added EnumItem EditorLiveScripting.Disabled : 1
+	Added EnumItem EditorLiveScripting.Enabled : 2
+
+Added EnumItem ScreenInsets.TopbarSafeInsets : 3
+
+Removed Function Humanoid:ApplyDescriptionBlocking
+
+Removed Event AssetImportSession.UploadCompleteDeprecated
+
+Removed Tag [NotBrowsable] from Property Humanoid.EvaluateStateMachine
