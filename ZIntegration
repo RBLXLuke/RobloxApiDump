@@ -15,6 +15,7 @@ Added Function bool AssetImportService:SavePreset(string name, Dictionary preset
 Added Function void AssetImportSession:ApplyPreset(Dictionary preset) {RobloxScriptSecurity}
 Added Function Map BaseImportData:CreatePresetFromData() {RobloxScriptSecurity}
 Added Function string MarketplaceService:PerformSubscriptionPurchase(string subscriptionId) {RobloxScriptSecurity} [Yields]
+Added Function void MarketplaceService:PromptNativePurchaseWithPayload(string productId, string payload) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyFillInBox(StudioWidget target) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyHighlight(StudioWidget target, string? rowName) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyShadows() {RobloxScriptSecurity}
@@ -143,4 +144,11 @@ Removed Function StudioWidgetsService:ShowSpotlight
 Removed Function TutorialService:HideOnlyNamedWidgets
 Removed Function TutorialService:ShowOnlyNamedWidgets
 
+Removed Tag [NotBrowsable] from Class ControllerManager
+Removed Tag [NotBrowsable] from Class AirController
+Removed Tag [NotBrowsable] from Class BuoyancySensor
+Removed Tag [NotBrowsable] from Class ClimbController
+Removed Tag [NotBrowsable] from Class GroundController
+Removed Tag [NotBrowsable] from Class SwimController
+Removed Tag [NotBrowsable] from Class ControllerPartSensor
 Removed Tag [NotCreatable] from Class StudioCallout
