@@ -6,6 +6,12 @@ Added Class AvatarCreationService : Instance [NotCreatable] [Service] [NotReplic
 Added Class LogReporterService : Instance [NotCreatable] [Service] [NotReplicated]
 	Added Function bool LogReporterService:ReportLog(string logId, string desc) {RobloxScriptSecurity}
 
+Added Class UIFlexItem : UIComponent
+	Added Property Enum.UIFlexMode UIFlexItem.FlexMode
+	Added Property float UIFlexItem.GrowRatio
+	Added Property Enum.ItemLineAlignment UIFlexItem.ItemLineAlignment
+	Added Property float UIFlexItem.ShrinkRatio
+
 Added Property Enum.CameraSpeedAdjustBinding Studio.Camera Speed Adjust Binding
 
 Added Function Map AssetImportService:GetAllPresets() {RobloxScriptSecurity}
@@ -16,6 +22,9 @@ Added Function void AssetImportSession:ApplyPreset(Dictionary preset) {RobloxScr
 Added Function Map BaseImportData:CreatePresetFromData() {RobloxScriptSecurity}
 Added Function string MarketplaceService:PerformSubscriptionPurchase(string subscriptionId) {RobloxScriptSecurity} [Yields]
 Added Function void MarketplaceService:PromptNativePurchaseWithPayload(string productId, string payload) {RobloxScriptSecurity}
+Added Function Dictionary OpenCloudService:HttpRequestAsync(Dictionary options) {RobloxScriptSecurity} [Yields]
+Added Function Dictionary OpenCloudService:InvokeAsync(string version, string methodName, Dictionary arguments) [Yields]
+Added Function void OpenCloudService:RegisterOpenCloud(string version, string methodName, Function method) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyFillInBox(StudioWidget target) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyHighlight(StudioWidget target, string? rowName) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyShadows() {RobloxScriptSecurity}
@@ -31,6 +40,20 @@ Added Enum CameraSpeedAdjustBinding
 	Added EnumItem CameraSpeedAdjustBinding.None : 0
 	Added EnumItem CameraSpeedAdjustBinding.RmbScroll : 1
 	Added EnumItem CameraSpeedAdjustBinding.AltScroll : 2
+
+Added Enum ItemLineAlignment
+	Added EnumItem ItemLineAlignment.Automatic : 0
+	Added EnumItem ItemLineAlignment.Start : 1
+	Added EnumItem ItemLineAlignment.Center : 2
+	Added EnumItem ItemLineAlignment.End : 3
+	Added EnumItem ItemLineAlignment.Stretch : 4
+
+Added Enum UIFlexMode
+	Added EnumItem UIFlexMode.None : 0
+	Added EnumItem UIFlexMode.Grow : 1
+	Added EnumItem UIFlexMode.Shrink : 2
+	Added EnumItem UIFlexMode.Fill : 3
+	Added EnumItem UIFlexMode.Custom : 4
 
 Added EnumItem StudioStyleGuideColor.OnboardingCover : 132
 Added EnumItem StudioStyleGuideColor.OnboardingHighlight : 133
