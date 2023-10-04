@@ -13,6 +13,9 @@ Added Class UIFlexItem : UIComponent
 	Added Property float UIFlexItem.ShrinkRatio
 
 Added Property Enum.CameraSpeedAdjustBinding Studio.Camera Speed Adjust Binding
+Added Property bool UIListLayout.Wraps
+Added Property Enum.UIFlexAlignment UIListLayout.HorizontalFlex
+Added Property Enum.UIFlexAlignment UIListLayout.VerticalFlex
 
 Added Function Map AssetImportService:GetAllPresets() {RobloxScriptSecurity}
 Added Function Map AssetImportService:GetPreset(string name) {RobloxScriptSecurity}
@@ -47,6 +50,13 @@ Added Enum ItemLineAlignment
 	Added EnumItem ItemLineAlignment.Center : 2
 	Added EnumItem ItemLineAlignment.End : 3
 	Added EnumItem ItemLineAlignment.Stretch : 4
+
+Added Enum UIFlexAlignment
+	Added EnumItem UIFlexAlignment.None : 0
+	Added EnumItem UIFlexAlignment.Fill : 1
+	Added EnumItem UIFlexAlignment.SpaceAround : 2
+	Added EnumItem UIFlexAlignment.SpaceBetween : 3
+	Added EnumItem UIFlexAlignment.SpaceEvenly : 4
 
 Added Enum UIFlexMode
 	Added EnumItem UIFlexMode.None : 0
@@ -121,6 +131,10 @@ Changed the memory category of Class AudioReverb
 	from: "Instances"
 	  to: "Internal"
 
+Changed the write permissions of Property Accessory.AccessoryType 
+	from: {✏️NotAccessibleSecurity}
+	  to: {✏️RobloxScriptSecurity}
+
 Changed the parameters of Function GeometryService:CalculateConstraintsToPreserve 
 	from: (Instance source, Objects destination, Dictionary options = nil)
 	  to: (Instance source, Array destination, Dictionary options = nil)
@@ -164,6 +178,7 @@ Removed Function AssetImportService:SaveTemplate
 Removed Function AssetImportSession:ApplyTemplate
 Removed Function BaseImportData:CreateTemplateFromData
 Removed Function StudioWidgetsService:ShowSpotlight
+Removed Function TeamCreateService:GetIsUseUniverseSearchNewEndpoint
 Removed Function TutorialService:HideOnlyNamedWidgets
 Removed Function TutorialService:ShowOnlyNamedWidgets
 
