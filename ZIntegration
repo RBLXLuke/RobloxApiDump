@@ -23,17 +23,22 @@ Added Function void AssetImportService:RemovePreset(string name) {RobloxScriptSe
 Added Function bool AssetImportService:SavePreset(string name, Dictionary preset) {RobloxScriptSecurity}
 Added Function void AssetImportSession:ApplyPreset(Dictionary preset) {RobloxScriptSecurity}
 Added Function Map BaseImportData:CreatePresetFromData() {RobloxScriptSecurity}
+Added Function void GuiService:SendUIOcclusionMetricsForQueryRegion(UDim2 position, UDim2 size, string regionName) {RobloxScriptSecurity}
 Added Function string MarketplaceService:PerformSubscriptionPurchase(string subscriptionId) {RobloxScriptSecurity} [Yields]
-Added Function void MarketplaceService:PromptNativePurchaseWithPayload(string productId, string payload) {RobloxScriptSecurity}
 Added Function Dictionary OpenCloudService:HttpRequestAsync(Dictionary options) {RobloxScriptSecurity} [Yields]
 Added Function Dictionary OpenCloudService:InvokeAsync(string version, string methodName, Dictionary arguments) [Yields]
 Added Function void OpenCloudService:RegisterOpenCloud(string version, string methodName, Function method) {RobloxScriptSecurity}
+Added Function void StudioWidget:SetFixedSize(int width, int height) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyFillInBox(StudioWidget target) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyHighlight(StudioWidget target, string? rowName) {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplyShadows() {RobloxScriptSecurity}
 Added Function void StudioWidgetsService:ApplySpotlight(StudioWidget target, string? rowName) {RobloxScriptSecurity}
+Added Function StudioWidget StudioWidgetsService:GetWidgetFromPluginGui(PluginGui gui) {RobloxScriptSecurity}
 Added Function bool TutorialService:HideWidgets(string commaSeparatedNames) {RobloxScriptSecurity}
 Added Function bool TutorialService:ShowWidgets(string commaSeparatedNames) {RobloxScriptSecurity}
+Added Function bool UGCValidationService:ValidateTextureAlpha(string textureId, int pixelWidth) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateTextureAlphaByteString(string byteString, int pixelWidth) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateTextureRGBFromFile(string path1, string path2, int crop_x, int crop_y, int screen_x, int screen_y, Color3 color1, Color3 color2, int pixelWidth) {RobloxScriptSecurity} [Yields]
 
 Added Event Player.ServerUpdatedHead(Enum.AssetType assetType, int64 assetId) {RobloxSecurity} [Hidden]
 Added Event VoiceChatService.PublishStateChange(Enum.MuteState muteState, string sessionId) {RobloxSecurity} [Hidden]
@@ -138,6 +143,10 @@ Changed the write permissions of Property Accessory.AccessoryType
 Changed the parameters of Function GeometryService:CalculateConstraintsToPreserve 
 	from: (Instance source, Objects destination, Dictionary options = nil)
 	  to: (Instance source, Array destination, Dictionary options = nil)
+
+Changed the parameters of Function SocialService:InvokeIrisInvite 
+	from: (Instance player, string tag, Array irisParticipantIds)
+	  to: (Instance player, string tag, Array irisParticipants)
 
 Changed the parameters and return-type of Function GeometryService:IntersectAsync 
 	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
