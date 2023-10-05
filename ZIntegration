@@ -43,6 +43,7 @@ Added Function bool UGCValidationService:ValidateTextureRGBFromFile(string path1
 Added Event Player.ServerUpdatedHead(Enum.AssetType assetType, int64 assetId) {RobloxSecurity} [Hidden]
 Added Event VoiceChatService.PublishStateChange(Enum.MuteState muteState, string sessionId) {RobloxSecurity} [Hidden]
 Added Event VoiceChatService.SubscribeStateChange(Enum.MuteState muteState, string userIds, string sessionId) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.VoiceChatplayerMuteStatusChangedEvent(int64 userId, bool muted, string sessionId) {RobloxSecurity} [Hidden]
 
 Added Enum CameraSpeedAdjustBinding
 	Added EnumItem CameraSpeedAdjustBinding.None : 0
