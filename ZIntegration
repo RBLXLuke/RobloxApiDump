@@ -1,4 +1,4 @@
-Version 598 (DEV BUILD)
+Version 599 (DEV BUILD)
 
 Added Class UIFlexItem : UIComponent
 	Added Property Enum.UIFlexMode UIFlexItem.FlexMode
@@ -13,6 +13,7 @@ Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
 Added Property Enum.UIFlexAlignment UIListLayout.VerticalFlex
 Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
 
+Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
 Added Function void GuiService:SendUIOcclusionMetricsForQueryRegion(UDim2 position, UDim2 size, string regionName) {RobloxScriptSecurity}
 Added Function Dictionary OpenCloudService:HttpRequestAsync(Dictionary options) {RobloxScriptSecurity} [Yields]
 Added Function Dictionary OpenCloudService:InvokeAsync(string version, string methodName, Dictionary arguments) [Yields]
@@ -73,3 +74,7 @@ Changed the parameters and return-type of Function GeometryService:UnionAsync
 	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
 
 Removed Function TeamCreateService:GetIsUseUniverseSearchNewEndpoint
+
+Removed Tag [Deprecated] from Property Sound.EmitterSize
+Removed Tag [Deprecated] from Property Sound.MaxDistance
+Removed Tag [Deprecated] from Property Sound.MinDistance
