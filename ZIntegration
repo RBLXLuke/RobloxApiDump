@@ -6,6 +6,7 @@ Added Class UIFlexItem : UIComponent
 	Added Property Enum.ItemLineAlignment UIFlexItem.ItemLineAlignment
 	Added Property float UIFlexItem.ShrinkRatio
 
+Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 Added Property bool UIListLayout.Wraps
 Added Property Enum.UIFlexAlignment UIListLayout.HorizontalFlex
 Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
