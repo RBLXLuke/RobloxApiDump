@@ -10,4 +10,4 @@ Active 9 AM - 9PM BST.
  
  Zcanary = Pushed Before Production Roll out (stable version)
  
- ZIntegration Unstable Channel with frequent Version and API Dumps
+ ZIntegration Unstable Channel with frequent Version changes and API Dumps
