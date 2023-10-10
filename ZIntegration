@@ -80,3 +80,4 @@ Removed Tag [Deprecated] from Property Sound.EmitterSize
 Removed Tag [Deprecated] from Property Sound.MaxDistance
 Removed Tag [Deprecated] from Property Sound.MinDistance
 Removed Tag [Hidden] from Property GuiService.TopbarInset
+Removed Tag [NotBrowsable] from Class DragDetector
