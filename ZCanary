@@ -70,3 +70,5 @@ Changed the parameters and return-type of Function GeometryService:UnionAsync
 	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
 
 Removed Function TeamCreateService:GetIsUseUniverseSearchNewEndpoint
+
+Removed Tag [NotBrowsable] from Class DragDetector
