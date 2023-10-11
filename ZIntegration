@@ -13,6 +13,7 @@ Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [N
 Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
 Added Property Enum.UIFlexAlignment UIListLayout.VerticalFlex
 Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
+Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
 
 Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
 Added Function void GuiService:SendUIOcclusionMetricsForQueryRegion(UDim2 position, UDim2 size, string regionName) {RobloxScriptSecurity}
@@ -33,6 +34,11 @@ Added Enum ItemLineAlignment
 	Added EnumItem ItemLineAlignment.Center : 2
 	Added EnumItem ItemLineAlignment.End : 3
 	Added EnumItem ItemLineAlignment.Stretch : 4
+
+Added Enum PhysicsSolver
+	Added EnumItem PhysicsSolver.Default : 0
+	Added EnumItem PhysicsSolver.Enabled : 1
+	Added EnumItem PhysicsSolver.Disabled : 2
 
 Added Enum UIFlexAlignment
 	Added EnumItem UIFlexAlignment.None : 0
