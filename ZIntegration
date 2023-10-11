@@ -6,6 +6,7 @@ Added Class UIFlexItem : UIComponent
 	Added Property Enum.ItemLineAlignment UIFlexItem.ItemLineAlignment
 	Added Property float UIFlexItem.ShrinkRatio
 
+Added Property bool AdGui.EnableVideoAds
 Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 Added Property bool UIListLayout.Wraps
 Added Property Enum.UIFlexAlignment UIListLayout.HorizontalFlex
@@ -26,7 +27,16 @@ Added Function bool UGCValidationService:ValidateTextureAlpha(string textureId, 
 Added Function bool UGCValidationService:ValidateTextureAlphaByteString(string byteString, int pixelWidth) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateTextureRGBFromFile(string path1, string path2, int crop_x, int crop_y, int screen_x, int screen_y, Color3 color1, Color3 color2, int pixelWidth) {RobloxScriptSecurity} [Yields]
 
+Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden]
+Added Event AdGui.ReportIsSubscribedToVideoCompletion() {RobloxSecurity} [Hidden]
 Added Event VoiceChatService.VoiceChatplayerMuteStatusChangedEvent(int64 userId, bool muted, string sessionId) {RobloxSecurity} [Hidden]
+
+Added Callback bool AdGui.OnAdEvent(Dictionary eventInfo)
+
+Added Enum AdEventType
+	Added EnumItem AdEventType.VideoLoaded : 0
+	Added EnumItem AdEventType.VideoRemoved : 1
+	Added EnumItem AdEventType.UserCompletedVideo : 2
 
 Added Enum ItemLineAlignment
 	Added EnumItem ItemLineAlignment.Automatic : 0
