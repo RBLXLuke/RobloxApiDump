@@ -1,137 +1,73 @@
-Version 597 (LIVE)
+Version 598 (LIVE)
 
-Added Class AvatarCreationService : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Function Tuple AvatarCreationService:PromptCreateAvatarAsync(Player player, HumanoidDescription humanoidDescription) [Yields]
+Added Class UIFlexItem : UIComponent
+	Added Property Enum.UIFlexMode UIFlexItem.FlexMode
+	Added Property float UIFlexItem.GrowRatio
+	Added Property Enum.ItemLineAlignment UIFlexItem.ItemLineAlignment
+	Added Property float UIFlexItem.ShrinkRatio
 
-Added Class LogReporterService : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Function bool LogReporterService:ReportLog(string logId, string desc) {RobloxScriptSecurity}
+Added Property bool UIListLayout.Wraps
+Added Property Enum.UIFlexAlignment UIListLayout.HorizontalFlex
+Added Property Enum.UIFlexAlignment UIListLayout.VerticalFlex
 
-Added Property Enum.CameraSpeedAdjustBinding Studio.Camera Speed Adjust Binding
+Added Function void GuiService:SendUIOcclusionMetricsForQueryRegion(UDim2 position, UDim2 size, string regionName) {RobloxScriptSecurity}
+Added Function Dictionary OpenCloudService:HttpRequestAsync(Dictionary options) {RobloxScriptSecurity} [Yields]
+Added Function Dictionary OpenCloudService:InvokeAsync(string version, string methodName, Dictionary arguments) [Yields]
+Added Function void OpenCloudService:RegisterOpenCloud(string version, string methodName, Function method) {RobloxScriptSecurity}
+Added Function void StudioWidget:SetFixedSize(int width, int height) {RobloxScriptSecurity}
+Added Function StudioWidget StudioWidgetsService:GetWidgetFromPluginGui(PluginGui gui) {RobloxScriptSecurity}
+Added Function bool UGCValidationService:ValidateTextureAlpha(string textureId, int pixelWidth) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateTextureAlphaByteString(string byteString, int pixelWidth) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateTextureRGBFromFile(string path1, string path2, int crop_x, int crop_y, int screen_x, int screen_y, Color3 color1, Color3 color2, int pixelWidth) {RobloxScriptSecurity} [Yields]
 
-Added Function Map AssetImportService:GetAllPresets() {RobloxScriptSecurity}
-Added Function Map AssetImportService:GetPreset(string name) {RobloxScriptSecurity}
-Added Function void AssetImportService:RemovePreset(string name) {RobloxScriptSecurity}
-Added Function bool AssetImportService:SavePreset(string name, Dictionary preset) {RobloxScriptSecurity}
-Added Function void AssetImportSession:ApplyPreset(Dictionary preset) {RobloxScriptSecurity}
-Added Function Map BaseImportData:CreatePresetFromData() {RobloxScriptSecurity}
-Added Function string MarketplaceService:PerformSubscriptionPurchase(string subscriptionId) {RobloxScriptSecurity} [Yields]
-Added Function void StudioWidgetsService:ApplyFillInBox(StudioWidget target) {RobloxScriptSecurity}
-Added Function void StudioWidgetsService:ApplyHighlight(StudioWidget target, string? rowName) {RobloxScriptSecurity}
-Added Function void StudioWidgetsService:ApplyShadows() {RobloxScriptSecurity}
-Added Function void StudioWidgetsService:ApplySpotlight(StudioWidget target, string? rowName) {RobloxScriptSecurity}
-Added Function bool TutorialService:HideWidgets(string commaSeparatedNames) {RobloxScriptSecurity}
-Added Function bool TutorialService:ShowWidgets(string commaSeparatedNames) {RobloxScriptSecurity}
+Added Event VoiceChatService.VoiceChatplayerMuteStatusChangedEvent(int64 userId, bool muted, string sessionId) {RobloxSecurity} [Hidden]
 
-Added Event Player.ServerUpdatedHead(Enum.AssetType assetType, int64 assetId) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.PublishStateChange(Enum.MuteState muteState, string sessionId) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscribeStateChange(Enum.MuteState muteState, string userIds, string sessionId) {RobloxSecurity} [Hidden]
+Added Enum ItemLineAlignment
+	Added EnumItem ItemLineAlignment.Automatic : 0
+	Added EnumItem ItemLineAlignment.Start : 1
+	Added EnumItem ItemLineAlignment.Center : 2
+	Added EnumItem ItemLineAlignment.End : 3
+	Added EnumItem ItemLineAlignment.Stretch : 4
 
-Added Enum CameraSpeedAdjustBinding
-	Added EnumItem CameraSpeedAdjustBinding.None : 0
-	Added EnumItem CameraSpeedAdjustBinding.RmbScroll : 1
-	Added EnumItem CameraSpeedAdjustBinding.AltScroll : 2
+Added Enum UIFlexAlignment
+	Added EnumItem UIFlexAlignment.None : 0
+	Added EnumItem UIFlexAlignment.Fill : 1
+	Added EnumItem UIFlexAlignment.SpaceAround : 2
+	Added EnumItem UIFlexAlignment.SpaceBetween : 3
+	Added EnumItem UIFlexAlignment.SpaceEvenly : 4
 
-Added EnumItem StudioStyleGuideColor.OnboardingCover : 132
-Added EnumItem StudioStyleGuideColor.OnboardingHighlight : 133
-Added EnumItem StudioStyleGuideColor.OnboardingShadow : 134
+Added Enum UIFlexMode
+	Added EnumItem UIFlexMode.None : 0
+	Added EnumItem UIFlexMode.Grow : 1
+	Added EnumItem UIFlexMode.Shrink : 2
+	Added EnumItem UIFlexMode.Fill : 3
+	Added EnumItem UIFlexMode.Custom : 4
 
-Added Tag [NotReplicated] to Class StudioAttachment
+Added Tag [Deprecated] to Function Camera:SetCameraPanMode
 
-Changed the memory category of Class AudioAnalyzer 
-	from: "Instances"
-	  to: "Internal"
+Changed the write permissions of Property Accessory.AccessoryType 
+	from: {✏️NotAccessibleSecurity}
+	  to: {✏️RobloxScriptSecurity}
 
-Changed the memory category of Class AudioChorus 
-	from: "Instances"
-	  to: "Internal"
+Changed the parameters of Function GeometryService:CalculateConstraintsToPreserve 
+	from: (Instance source, Objects destination, Dictionary options = nil)
+	  to: (Instance source, Array destination, Dictionary options = nil)
 
-Changed the memory category of Class AudioCompressor 
-	from: "Instances"
-	  to: "Internal"
+Changed the parameters of Function SocialService:InvokeIrisInvite 
+	from: (Instance player, string tag, Array irisParticipantIds)
+	  to: (Instance player, string tag, Array irisParticipants)
 
-Changed the memory category of Class AudioDeviceInput 
-	from: "Instances"
-	  to: "Internal"
+Changed the parameters and return-type of Function GeometryService:IntersectAsync 
+	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
+	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
 
-Changed the memory category of Class AudioDeviceOutput 
-	from: "Instances"
-	  to: "Internal"
+Changed the parameters and return-type of Function GeometryService:SubtractAsync 
+	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
+	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
 
-Changed the memory category of Class AudioDistortion 
-	from: "Instances"
-	  to: "Internal"
+Changed the parameters and return-type of Function GeometryService:UnionAsync 
+	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
+	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
 
-Changed the memory category of Class AudioEcho 
-	from: "Instances"
-	  to: "Internal"
+Removed Function TeamCreateService:GetIsUseUniverseSearchNewEndpoint
 
-Changed the memory category of Class AudioEmitter 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioEqualizer 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioFader 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioFlanger 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioListener 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioPitchShifter 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioPlayer 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the memory category of Class AudioReverb 
-	from: "Instances"
-	  to: "Internal"
-
-Changed the return-type of Function ScriptEditorService:UpdateSourceAsync 
-	from: Tuple
-	  to: void
-
-Changed the thread safety of Function DynamicImage:ReadPixels 
-	from: {🧬Unsafe}
-	  to: {🧬Safe}
-
-Changed the parameters of Event VoiceChatService.SubscriptionHandshakeAcked 
-	from: (int eventTag, string handshakeAnswer, string userToMute, string sessionId)
-	  to: (int64 eventTag, string handshakeAnswer, string usersToMute, string sessionId)
-
-Changed the parameters of Event VoiceChatService.SubscriptionHandshakeCompleted 
-	from: (string subscriptionInfo, string sessionId)
-	  to: (string sessionId, int64 eventTag)
-
-Changed the parameters of Event VoiceChatService.SubscriptionHandshakeInitiated 
-	from: (string handshakeOffer, string subscriptionInfo, bool isNewConnection, string sessionId)
-	  to: (string handshakeOffer, string newSubscriptionStates, bool isNewConnection, string sessionId, int64 eventTag)
-
-Removed Function AssetImportService:GetAllTemplates
-Removed Function AssetImportService:GetTemplate
-Removed Function AssetImportService:RemoveTemplate
-Removed Function AssetImportService:SaveTemplate
-Removed Function AssetImportSession:ApplyTemplate
-Removed Function BaseImportData:CreateTemplateFromData
-Removed Function StudioWidgetsService:ShowSpotlight
-Removed Function TutorialService:HideOnlyNamedWidgets
-Removed Function TutorialService:ShowOnlyNamedWidgets
-
-Removed Tag [NotBrowsable] from Class ControllerManager
-Removed Tag [NotBrowsable] from Class AirController
-Removed Tag [NotBrowsable] from Class BuoyancySensor
-Removed Tag [NotBrowsable] from Class ClimbController
-Removed Tag [NotBrowsable] from Class GroundController
-Removed Tag [NotBrowsable] from Class SwimController
-Removed Tag [NotBrowsable] from Class ControllerPartSensor
-Removed Tag [NotCreatable] from Class StudioCallout
