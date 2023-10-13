@@ -1,10 +1,14 @@
-Version 599 (DEV BUILD)
+Version 600 (DEV BUILD)
 
 Added Property bool AdGui.EnableVideoAds
 Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property bool TextChatService.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
 Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
 Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
 Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
+Added Property bool UserGameSettings.ChatTranslationEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property bool UserGameSettings.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
 Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
 
 Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
@@ -28,6 +32,14 @@ Added Enum PhysicsSolver
 	Added EnumItem PhysicsSolver.Disabled : 2
 
 Added EnumItem Platform.PS5 : 19
+
+Added Tag [NotReplicated] to Property TextChatService.ChatTranslationEnabled
+
+Added Tags [Hidden] [NotReplicated] to Property TextChatService.ChatTranslationToggleEnabled
+
+Changed the serialization of Property TextChatService.ChatTranslationEnabled 
+	from: [<💾|📁> Saves|Loads]
+	  to: [<🕒> RuntimeOnly]
 
 Changed the write permissions of Property Accessory.AccessoryType 
 	from: {✏️RobloxScriptSecurity}
