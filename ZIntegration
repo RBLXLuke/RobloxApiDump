@@ -1,8 +1,14 @@
 Version 600 (DEV BUILD)
 
 Added Property bool AdGui.EnableVideoAds
+Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
 Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
+Added Property bool PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms {RobloxScriptSecurity}
+Added Property bool SlidingBallConstraint.SoftlockServoUponReachingTarget
 Added Property bool TextChatService.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelity {✏️PluginSecurity} [<📁> LoadOnly] [NotReplicated]
+Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelityInternal {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
 Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
 Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
@@ -12,11 +18,14 @@ Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptS
 Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
 
 Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
+Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
+Added Function Array UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
 Added Function Content ViewportFrame:CaptureSnapshotAsync() {RobloxScriptSecurity} [Yields]
 
 Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden]
 Added Event AdGui.ReportIsSubscribedToVideoCompletion() {RobloxSecurity} [Hidden]
 Added Event MarketplaceService.ConfirmUserSubscriptionPurchase(string subscriptionId) {RobloxSecurity} [Hidden]
+Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
 Added Event SoundService.AudioInstanceAdded(Instance instance) {RobloxScriptSecurity}
 
 Added Callback bool AdGui.OnAdEvent(Dictionary eventInfo)
@@ -25,6 +34,11 @@ Added Enum AdEventType
 	Added EnumItem AdEventType.VideoLoaded : 0
 	Added EnumItem AdEventType.VideoRemoved : 1
 	Added EnumItem AdEventType.UserCompletedVideo : 2
+
+Added Enum FluidFidelity
+	Added EnumItem FluidFidelity.Automatic : 0
+	Added EnumItem FluidFidelity.UseCollisionGeometry : 1
+	Added EnumItem FluidFidelity.UsePreciseGeometry : 2
 
 Added Enum PhysicsSolver
 	Added EnumItem PhysicsSolver.Default : 0
@@ -44,6 +58,10 @@ Changed the serialization of Property TextChatService.ChatTranslationEnabled
 Changed the write permissions of Property Accessory.AccessoryType 
 	from: {✏️RobloxScriptSecurity}
 	  to: {✏️None}
+
+Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
+
+Removed Function UGCValidationService:ValidateTextureRGBFromFile
 
 Removed Tag [Deprecated] from Property Sound.EmitterSize
 Removed Tag [Deprecated] from Property Sound.MaxDistance
