@@ -15,7 +15,7 @@ Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [Not
 Added Property bool UserGameSettings.ChatTranslationEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
 Added Property bool UserGameSettings.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
 Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
+Added Property Enum.PrimalPhysicsSolver Workspace.PrimalPhysicsSolver [NotScriptable]
 
 Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
 Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
@@ -42,10 +42,10 @@ Added Enum FluidFidelity
 	Added EnumItem FluidFidelity.UseCollisionGeometry : 1
 	Added EnumItem FluidFidelity.UsePreciseGeometry : 2
 
-Added Enum PhysicsSolver
-	Added EnumItem PhysicsSolver.Default : 0
-	Added EnumItem PhysicsSolver.Enabled : 1
-	Added EnumItem PhysicsSolver.Disabled : 2
+Added Enum PrimalPhysicsSolver
+	Added EnumItem PrimalPhysicsSolver.Default : 0
+	Added EnumItem PrimalPhysicsSolver.Experimental : 1
+	Added EnumItem PrimalPhysicsSolver.Disabled : 2
 
 Added EnumItem Platform.PS5 : 19
 
