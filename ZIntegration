@@ -20,6 +20,8 @@ Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
 Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
 Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
 Added Function Array UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
 Added Function Content ViewportFrame:CaptureSnapshotAsync() {RobloxScriptSecurity} [Yields]
 
 Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden]
