@@ -1,5 +1,7 @@
 Version 600 (DEV BUILD)
 
+Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
+
 Added Property bool AdGui.EnableVideoAds
 Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
 Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
@@ -18,9 +20,12 @@ Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptS
 Added Property Enum.PrimalPhysicsSolver Workspace.PrimalPhysicsSolver [NotScriptable]
 
 Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
+Added Function void ClientReplicator:RequestServerScriptProfilingData() {RobloxScriptSecurity}
 Added Function string GeometryService:HashMeshAsync(Content meshId) {RobloxScriptSecurity} [Yields]
 Added Function Content GeometryService:StitchMeshesAsync(Array meshParts) {RobloxScriptSecurity} [Yields]
+Added Function void OpenCloudService:RegistrationComplete() {RobloxScriptSecurity}
 Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
+Added Function string ScriptContext:GetScriptProfilingData() {RobloxScriptSecurity}
 Added Function Array UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
