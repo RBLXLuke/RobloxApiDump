@@ -2,24 +2,14 @@ Version 600 (DEV BUILD)
 
 Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
-Added Property bool AdGui.EnableVideoAds
 Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
-Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
 Added Property bool PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms {RobloxScriptSecurity}
 Added Property bool SlidingBallConstraint.SoftlockServoUponReachingTarget
-Added Property bool TextChatService.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
 Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelity {✏️PluginSecurity} [<📁> LoadOnly] [NotReplicated]
 Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelityInternal {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
-Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
-Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
-Added Property bool UserGameSettings.ChatTranslationEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property bool UserGameSettings.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
 Added Property Enum.PrimalPhysicsSolver Workspace.PrimalPhysicsSolver [NotScriptable]
 
-Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
 Added Function void ClientReplicator:RequestServerScriptProfilingData() {RobloxScriptSecurity}
 Added Function string GeometryService:HashMeshAsync(Content meshId) {RobloxScriptSecurity} [Yields]
 Added Function Content GeometryService:StitchMeshesAsync(Array meshParts) {RobloxScriptSecurity} [Yields]
@@ -31,22 +21,12 @@ Added Function void SocialService:PromptPhoneBook(Instance player, string tag)
 Added Function Tuple UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
-Added Function Content ViewportFrame:CaptureSnapshotAsync() {RobloxScriptSecurity} [Yields]
 
-Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden]
-Added Event AdGui.ReportIsSubscribedToVideoCompletion() {RobloxSecurity} [Hidden]
-Added Event MarketplaceService.ConfirmUserSubscriptionPurchase(string subscriptionId) {RobloxSecurity} [Hidden]
 Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
 Added Event SocialService.PhoneBookPromptClosed(Instance player)
-Added Event SoundService.AudioInstanceAdded(Instance instance) {RobloxScriptSecurity}
+Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(string sessionId) {RobloxSecurity} [Hidden]
 
-Added Callback bool AdGui.OnAdEvent(Dictionary eventInfo)
 Added Callback Instance SocialService.OnCallInviteInvoked(string tag, Array callParticipantIds)
-
-Added Enum AdEventType
-	Added EnumItem AdEventType.VideoLoaded : 0
-	Added EnumItem AdEventType.VideoRemoved : 1
-	Added EnumItem AdEventType.UserCompletedVideo : 2
 
 Added Enum FluidFidelity
 	Added EnumItem FluidFidelity.Automatic : 0
@@ -57,20 +37,6 @@ Added Enum PrimalPhysicsSolver
 	Added EnumItem PrimalPhysicsSolver.Default : 0
 	Added EnumItem PrimalPhysicsSolver.Experimental : 1
 	Added EnumItem PrimalPhysicsSolver.Disabled : 2
-
-Added EnumItem Platform.PS5 : 19
-
-Added Tag [NotReplicated] to Property TextChatService.ChatTranslationEnabled
-
-Added Tags [Hidden] [NotReplicated] to Property TextChatService.ChatTranslationToggleEnabled
-
-Changed the serialization of Property TextChatService.ChatTranslationEnabled 
-	from: [<💾|📁> Saves|Loads]
-	  to: [<🕒> RuntimeOnly]
-
-Changed the write permissions of Property Accessory.AccessoryType 
-	from: {✏️RobloxScriptSecurity}
-	  to: {✏️None}
 
 Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
 	from: (Enum.SortDirection direction, int count, string exclusiveLowerBound = "", string exclusiveUpperBound = "")
@@ -89,10 +55,11 @@ Changed the return-type of Function MemoryStoreSortedMap:UpdateAsync
 	  to: Tuple
 
 Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
+Removed Property Workspace.NewPhysicsSolver
 
 Removed Function UGCValidationService:ValidateTextureRGBFromFile
 
-Removed Tag [Deprecated] from Property Sound.EmitterSize
-Removed Tag [Deprecated] from Property Sound.MaxDistance
-Removed Tag [Deprecated] from Property Sound.MinDistance
-Removed Tag [Hidden] from Property GuiService.TopbarInset
+Removed Enum PhysicsSolver
+	Removed EnumItem PhysicsSolver.Default
+	Removed EnumItem PhysicsSolver.Enabled
+	Removed EnumItem PhysicsSolver.Disabled
