@@ -72,6 +72,22 @@ Changed the write permissions of Property Accessory.AccessoryType
 	from: {✏️RobloxScriptSecurity}
 	  to: {✏️None}
 
+Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
+	from: (Enum.SortDirection direction, int count, string exclusiveLowerBound = "", string exclusiveUpperBound = "")
+	  to: (Enum.SortDirection direction, int count, Variant exclusiveLowerBound, Variant exclusiveUpperBound)
+
+Changed the parameters of Function MemoryStoreSortedMap:SetAsync 
+	from: (string key, Variant value, int64 expiration)
+	  to: (string key, Variant value, int64 expiration, Variant sortKey)
+
+Changed the return-type of Function MemoryStoreSortedMap:GetAsync 
+	from: Variant
+	  to: Tuple
+
+Changed the return-type of Function MemoryStoreSortedMap:UpdateAsync 
+	from: Variant
+	  to: Tuple
+
 Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
 
 Removed Function UGCValidationService:ValidateTextureRGBFromFile
