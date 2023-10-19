@@ -3,6 +3,7 @@ Version 600 (DEV BUILD)
 Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
 Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
+Added Property BinaryString DynamicImage.ImageData {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
 Added Property bool PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms {RobloxScriptSecurity}
 Added Property bool SlidingBallConstraint.SoftlockServoUponReachingTarget
@@ -23,6 +24,7 @@ Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteS
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
 
 Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
+Added Event SocialService.CallInviteStateChanged(Instance player, Enum.InviteState inviteState)
 Added Event SocialService.PhoneBookPromptClosed(Instance player)
 Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(string sessionId) {RobloxSecurity} [Hidden]
 
@@ -32,6 +34,12 @@ Added Enum FluidFidelity
 	Added EnumItem FluidFidelity.Automatic : 0
 	Added EnumItem FluidFidelity.UseCollisionGeometry : 1
 	Added EnumItem FluidFidelity.UsePreciseGeometry : 2
+
+Added Enum InviteState
+	Added EnumItem InviteState.Placed : 0
+	Added EnumItem InviteState.Accepted : 1
+	Added EnumItem InviteState.Declined : 2
+	Added EnumItem InviteState.Missed : 3
 
 Added Enum PrimalPhysicsSolver
 	Added EnumItem PrimalPhysicsSolver.Default : 0
