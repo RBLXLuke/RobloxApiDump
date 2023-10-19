@@ -26,7 +26,9 @@ Added Function Content GeometryService:StitchMeshesAsync(Array meshParts) {Roblo
 Added Function void OpenCloudService:RegistrationComplete() {RobloxScriptSecurity}
 Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
 Added Function string ScriptContext:GetScriptProfilingData() {RobloxScriptSecurity}
-Added Function Array UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
+Added Function bool SocialService:CanSendCallInviteAsync(Instance player) [Yields]
+Added Function void SocialService:PromptPhoneBook(Instance player, string tag)
+Added Function Tuple UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
 Added Function Content ViewportFrame:CaptureSnapshotAsync() {RobloxScriptSecurity} [Yields]
@@ -35,9 +37,11 @@ Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden
 Added Event AdGui.ReportIsSubscribedToVideoCompletion() {RobloxSecurity} [Hidden]
 Added Event MarketplaceService.ConfirmUserSubscriptionPurchase(string subscriptionId) {RobloxSecurity} [Hidden]
 Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
+Added Event SocialService.PhoneBookPromptClosed(Instance player)
 Added Event SoundService.AudioInstanceAdded(Instance instance) {RobloxScriptSecurity}
 
 Added Callback bool AdGui.OnAdEvent(Dictionary eventInfo)
+Added Callback Instance SocialService.OnCallInviteInvoked(string tag, Array callParticipantIds)
 
 Added Enum AdEventType
 	Added EnumItem AdEventType.VideoLoaded : 0
