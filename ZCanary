@@ -1,53 +1,83 @@
-Version 599 (CANARY) 
+Version 600 (CANARY) 
 
 
-Added Property bool AdGui.EnableVideoAds
-Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property bool TextChatService.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
-Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
-Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
-Added Property bool UserGameSettings.ChatTranslationEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property bool UserGameSettings.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
-Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
+Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
-Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
-Added Function Content ViewportFrame:CaptureSnapshotAsync() {RobloxScriptSecurity} [Yields]
+Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
+Added Property BinaryString DynamicImage.ImageData {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
+Added Property bool PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms {RobloxScriptSecurity}
+Added Property bool SlidingBallConstraint.SoftlockServoUponReachingTarget
+Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelity {✏️PluginSecurity} [<📁> LoadOnly] [NotReplicated]
+Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelityInternal {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property Enum.PrimalPhysicsSolver Workspace.PrimalPhysicsSolver [NotScriptable]
 
-Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden]
-Added Event AdGui.ReportIsSubscribedToVideoCompletion() {RobloxSecurity} [Hidden]
-Added Event MarketplaceService.ConfirmUserSubscriptionPurchase(string subscriptionId) {RobloxSecurity} [Hidden]
-Added Event SoundService.AudioInstanceAdded(Instance instance) {RobloxScriptSecurity}
+Added Function void ClientReplicator:RequestServerScriptProfilingData() {RobloxScriptSecurity}
+Added Function string GeometryService:HashMeshAsync(Content meshId) {RobloxScriptSecurity} [Yields]
+Added Function Content GeometryService:StitchMeshesAsync(Array meshParts) {RobloxScriptSecurity} [Yields]
+Added Function void OpenCloudService:RegistrationComplete() {RobloxScriptSecurity}
+Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
+Added Function string ScriptContext:GetScriptProfilingData() {RobloxScriptSecurity}
+Added Function bool SocialService:CanSendCallInviteAsync(Instance player) [Yields]
+Added Function void SocialService:PromptPhoneBook(Instance player, string tag)
+Added Function Tuple UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
+Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
 
-Added Callback bool AdGui.OnAdEvent(Dictionary eventInfo)
+Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
+Added Event SocialService.CallInviteStateChanged(Instance player, Enum.InviteState inviteState)
+Added Event SocialService.PhoneBookPromptClosed(Instance player)
+Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(string sessionId) {RobloxSecurity} [Hidden]
 
-Added Enum AdEventType
-	Added EnumItem AdEventType.VideoLoaded : 0
-	Added EnumItem AdEventType.VideoRemoved : 1
-	Added EnumItem AdEventType.UserCompletedVideo : 2
+Added Callback Instance SocialService.OnCallInviteInvoked(string tag, Array callParticipantIds)
 
-Added Enum PhysicsSolver
-	Added EnumItem PhysicsSolver.Default : 0
-	Added EnumItem PhysicsSolver.Enabled : 1
-	Added EnumItem PhysicsSolver.Disabled : 2
+Added Enum FluidFidelity
+	Added EnumItem FluidFidelity.Automatic : 0
+	Added EnumItem FluidFidelity.UseCollisionGeometry : 1
+	Added EnumItem FluidFidelity.UsePreciseGeometry : 2
 
-Added EnumItem Platform.PS5 : 19
+Added Enum InviteState
+	Added EnumItem InviteState.Placed : 0
+	Added EnumItem InviteState.Accepted : 1
+	Added EnumItem InviteState.Declined : 2
+	Added EnumItem InviteState.Missed : 3
 
-Added Tag [NotReplicated] to Property TextChatService.ChatTranslationEnabled
+Added Enum PrimalPhysicsSolver
+	Added EnumItem PrimalPhysicsSolver.Default : 0
+	Added EnumItem PrimalPhysicsSolver.Experimental : 1
+	Added EnumItem PrimalPhysicsSolver.Disabled : 2
 
-Added Tags [Hidden] [NotReplicated] to Property TextChatService.ChatTranslationToggleEnabled
+Added EnumItem AlignType.PrimaryAxisParallel : 2
+Added EnumItem AlignType.PrimaryAxisPerpendicular : 3
+Added EnumItem AlignType.PrimaryAxisLookAt : 4
+Added EnumItem AlignType.AllAxes : 5
 
-Changed the serialization of Property TextChatService.ChatTranslationEnabled 
-	from: [<💾|📁> Saves|Loads]
-	  to: [<🕒> RuntimeOnly]
+Added Tag [Deprecated] to EnumItem AlignType.Parallel
+Added Tag [Deprecated] to EnumItem AlignType.Perpendicular
 
-Changed the write permissions of Property Accessory.AccessoryType 
-	from: {✏️RobloxScriptSecurity}
-	  to: {✏️None}
+Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
+	from: (Enum.SortDirection direction, int count, string exclusiveLowerBound = "", string exclusiveUpperBound = "")
+	  to: (Enum.SortDirection direction, int count, Variant exclusiveLowerBound, Variant exclusiveUpperBound)
 
-Removed Tag [Deprecated] from Property Sound.EmitterSize
-Removed Tag [Deprecated] from Property Sound.MaxDistance
-Removed Tag [Deprecated] from Property Sound.MinDistance
-Removed Tag [Hidden] from Property GuiService.TopbarInset
+Changed the parameters of Function MemoryStoreSortedMap:SetAsync 
+	from: (string key, Variant value, int64 expiration)
+	  to: (string key, Variant value, int64 expiration, Variant sortKey)
+
+Changed the return-type of Function MemoryStoreSortedMap:GetAsync 
+	from: Variant
+	  to: Tuple
+
+Changed the return-type of Function MemoryStoreSortedMap:UpdateAsync 
+	from: Variant
+	  to: Tuple
+
+Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
+Removed Property Workspace.NewPhysicsSolver
+
+Removed Function UGCValidationService:ValidateTextureRGBFromFile
+
+Removed Enum PhysicsSolver
+	Removed EnumItem PhysicsSolver.Default
+	Removed EnumItem PhysicsSolver.Enabled
+	Removed EnumItem PhysicsSolver.Disabled
 
