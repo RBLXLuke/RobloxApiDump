@@ -1,73 +1,52 @@
-Version 598 (LIVE)
+Version 599 (LIVE)
 
-Added Class UIFlexItem : UIComponent
-	Added Property Enum.UIFlexMode UIFlexItem.FlexMode
-	Added Property float UIFlexItem.GrowRatio
-	Added Property Enum.ItemLineAlignment UIFlexItem.ItemLineAlignment
-	Added Property float UIFlexItem.ShrinkRatio
+Added Property bool AdGui.EnableVideoAds
+Added Property SharedString DynamicMesh.MeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property bool TextChatService.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property UDim UIListLayout.HorizontalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
+Added Property Enum.ItemLineAlignment UIListLayout.ItemLineAlignment
+Added Property UDim UIListLayout.VerticalPadding [<📁> LoadOnly] [Hidden] [NotScriptable]
+Added Property bool UserGameSettings.ChatTranslationEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property bool UserGameSettings.ChatTranslationFTUXShown {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property bool UserGameSettings.ChatTranslationToggleEnabled {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property Enum.PhysicsSolver Workspace.NewPhysicsSolver [NotScriptable]
 
-Added Property bool UIListLayout.Wraps
-Added Property Enum.UIFlexAlignment UIListLayout.HorizontalFlex
-Added Property Enum.UIFlexAlignment UIListLayout.VerticalFlex
+Added Function Map AssetImportSession:CreatePresetFromData(Instance importData) {RobloxScriptSecurity}
+Added Function Content ViewportFrame:CaptureSnapshotAsync() {RobloxScriptSecurity} [Yields]
 
-Added Function void GuiService:SendUIOcclusionMetricsForQueryRegion(UDim2 position, UDim2 size, string regionName) {RobloxScriptSecurity}
-Added Function Dictionary OpenCloudService:HttpRequestAsync(Dictionary options) {RobloxScriptSecurity} [Yields]
-Added Function Dictionary OpenCloudService:InvokeAsync(string version, string methodName, Dictionary arguments) [Yields]
-Added Function void OpenCloudService:RegisterOpenCloud(string version, string methodName, Function method) {RobloxScriptSecurity}
-Added Function void StudioWidget:SetFixedSize(int width, int height) {RobloxScriptSecurity}
-Added Function StudioWidget StudioWidgetsService:GetWidgetFromPluginGui(PluginGui gui) {RobloxScriptSecurity}
-Added Function bool UGCValidationService:ValidateTextureAlpha(string textureId, int pixelWidth) {RobloxScriptSecurity} [Yields]
-Added Function bool UGCValidationService:ValidateTextureAlphaByteString(string byteString, int pixelWidth) {RobloxScriptSecurity} [Yields]
-Added Function bool UGCValidationService:ValidateTextureRGBFromFile(string path1, string path2, int crop_x, int crop_y, int screen_x, int screen_y, Color3 color1, Color3 color2, int pixelWidth) {RobloxScriptSecurity} [Yields]
+Added Event AdGui.AdEvent(Enum.AdEventType adEventType) {RobloxSecurity} [Hidden]
+Added Event AdGui.ReportIsSubscribedToVideoCompletion() {RobloxSecurity} [Hidden]
+Added Event MarketplaceService.ConfirmUserSubscriptionPurchase(string subscriptionId) {RobloxSecurity} [Hidden]
+Added Event SoundService.AudioInstanceAdded(Instance instance) {RobloxScriptSecurity}
 
-Added Event VoiceChatService.VoiceChatplayerMuteStatusChangedEvent(int64 userId, bool muted, string sessionId) {RobloxSecurity} [Hidden]
+Added Callback bool AdGui.OnAdEvent(Dictionary eventInfo)
 
-Added Enum ItemLineAlignment
-	Added EnumItem ItemLineAlignment.Automatic : 0
-	Added EnumItem ItemLineAlignment.Start : 1
-	Added EnumItem ItemLineAlignment.Center : 2
-	Added EnumItem ItemLineAlignment.End : 3
-	Added EnumItem ItemLineAlignment.Stretch : 4
+Added Enum AdEventType
+	Added EnumItem AdEventType.VideoLoaded : 0
+	Added EnumItem AdEventType.VideoRemoved : 1
+	Added EnumItem AdEventType.UserCompletedVideo : 2
 
-Added Enum UIFlexAlignment
-	Added EnumItem UIFlexAlignment.None : 0
-	Added EnumItem UIFlexAlignment.Fill : 1
-	Added EnumItem UIFlexAlignment.SpaceAround : 2
-	Added EnumItem UIFlexAlignment.SpaceBetween : 3
-	Added EnumItem UIFlexAlignment.SpaceEvenly : 4
+Added Enum PhysicsSolver
+	Added EnumItem PhysicsSolver.Default : 0
+	Added EnumItem PhysicsSolver.Enabled : 1
+	Added EnumItem PhysicsSolver.Disabled : 2
 
-Added Enum UIFlexMode
-	Added EnumItem UIFlexMode.None : 0
-	Added EnumItem UIFlexMode.Grow : 1
-	Added EnumItem UIFlexMode.Shrink : 2
-	Added EnumItem UIFlexMode.Fill : 3
-	Added EnumItem UIFlexMode.Custom : 4
+Added EnumItem Platform.PS5 : 19
 
-Added Tag [Deprecated] to Function Camera:SetCameraPanMode
+Added Tag [NotReplicated] to Property TextChatService.ChatTranslationEnabled
+
+Added Tags [Hidden] [NotReplicated] to Property TextChatService.ChatTranslationToggleEnabled
+
+Changed the serialization of Property TextChatService.ChatTranslationEnabled 
+	from: [<💾|📁> Saves|Loads]
+	  to: [<🕒> RuntimeOnly]
 
 Changed the write permissions of Property Accessory.AccessoryType 
-	from: {✏️NotAccessibleSecurity}
-	  to: {✏️RobloxScriptSecurity}
+	from: {✏️RobloxScriptSecurity}
+	  to: {✏️None}
 
-Changed the parameters of Function GeometryService:CalculateConstraintsToPreserve 
-	from: (Instance source, Objects destination, Dictionary options = nil)
-	  to: (Instance source, Array destination, Dictionary options = nil)
-
-Changed the parameters of Function SocialService:InvokeIrisInvite 
-	from: (Instance player, string tag, Array irisParticipantIds)
-	  to: (Instance player, string tag, Array irisParticipants)
-
-Changed the parameters and return-type of Function GeometryService:IntersectAsync 
-	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
-	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
-
-Changed the parameters and return-type of Function GeometryService:SubtractAsync 
-	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
-	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
-
-Changed the parameters and return-type of Function GeometryService:UnionAsync 
-	from: (Instance part, Objects parts, Dictionary options = nil) -> Objects
-	  to: (Instance part, Array parts, Dictionary options = nil) -> Array
-
-Removed Function TeamCreateService:GetIsUseUniverseSearchNewEndpoint
+Removed Tag [Deprecated] from Property Sound.EmitterSize
+Removed Tag [Deprecated] from Property Sound.MaxDistance
+Removed Tag [Deprecated] from Property Sound.MinDistance
+Removed Tag [Hidden] from Property GuiService.TopbarInset
 
