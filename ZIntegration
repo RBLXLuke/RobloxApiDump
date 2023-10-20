@@ -1,4 +1,4 @@
-Version 600 (DEV BUILD)
+Version 601 (DEV BUILD)
 
 Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
@@ -24,6 +24,7 @@ Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteS
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
 
 Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
+Added Event RibbonNotificationService.ToggleNotificationTray(bool checked) {RobloxScriptSecurity}
 Added Event SocialService.CallInviteStateChanged(Instance player, Enum.InviteState inviteState)
 Added Event SocialService.PhoneBookPromptClosed(Instance player)
 Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(string sessionId) {RobloxSecurity} [Hidden]
@@ -46,6 +47,34 @@ Added Enum PrimalPhysicsSolver
 	Added EnumItem PrimalPhysicsSolver.Experimental : 1
 	Added EnumItem PrimalPhysicsSolver.Disabled : 2
 
+Added EnumItem AlignType.PrimaryAxisParallel : 2
+Added EnumItem AlignType.PrimaryAxisPerpendicular : 3
+Added EnumItem AlignType.PrimaryAxisLookAt : 4
+Added EnumItem AlignType.AllAxes : 5
+
+Added Tag [Deprecated] to EnumItem AlignType.Parallel
+Added Tag [Deprecated] to EnumItem AlignType.Perpendicular
+
+Changed the read permissions of Property UserGameSettings.VRComfortSetting 
+	from: {RobloxScriptSecurity}
+	  to: {None}
+
+Changed the read permissions of Property UserGameSettings.VRSmoothRotationEnabledCustomOption 
+	from: {RobloxScriptSecurity}
+	  to: {None}
+
+Changed the read permissions of Property UserGameSettings.VRThirdPersonFollowCamEnabled 
+	from: {RobloxScriptSecurity}
+	  to: {None}
+
+Changed the read permissions of Property UserGameSettings.VRThirdPersonFollowCamEnabledCustomOption 
+	from: {RobloxScriptSecurity}
+	  to: {None}
+
+Changed the read permissions of Property UserGameSettings.VignetteEnabledCustomOption 
+	from: {RobloxScriptSecurity}
+	  to: {None}
+
 Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
 	from: (Enum.SortDirection direction, int count, string exclusiveLowerBound = "", string exclusiveUpperBound = "")
 	  to: (Enum.SortDirection direction, int count, Variant exclusiveLowerBound, Variant exclusiveUpperBound)
@@ -66,6 +95,8 @@ Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
 Removed Property Workspace.NewPhysicsSolver
 
 Removed Function UGCValidationService:ValidateTextureRGBFromFile
+
+Removed Event RibbonNotificationService.NewNotificationId
 
 Removed Enum PhysicsSolver
 	Removed EnumItem PhysicsSolver.Default
