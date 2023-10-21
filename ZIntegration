@@ -2,6 +2,14 @@ Version 601 (DEV BUILD)
 
 Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
+Added Class Path2D : GuiBase [NotReplicated]
+	Added Property bool Path2D.Visible {RobloxScriptSecurity}
+	Added Property int Path2D.SelectedControlPoint {RobloxScriptSecurity} [<📁> LoadOnly] [NotReplicated]
+	Added Property Vector2 Path2D.AbsoluteSize {RobloxScriptSecurity} [ReadOnly]
+	Added Property UDim2 Path2D.Position {RobloxScriptSecurity}
+	Added Function Array Path2D:GetControlPoints() {RobloxScriptSecurity}
+	Added Function void Path2D:SetControlPoints(Array controlPoints) {RobloxScriptSecurity}
+
 Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
 Added Property BinaryString DynamicImage.ImageData {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
@@ -58,13 +66,7 @@ Added Enum PrimalPhysicsSolver
 	Added EnumItem PrimalPhysicsSolver.Experimental : 1
 	Added EnumItem PrimalPhysicsSolver.Disabled : 2
 
-Added EnumItem AlignType.PrimaryAxisParallel : 2
-Added EnumItem AlignType.PrimaryAxisPerpendicular : 3
-Added EnumItem AlignType.PrimaryAxisLookAt : 4
-Added EnumItem AlignType.AllAxes : 5
-
-Added Tag [Deprecated] to EnumItem AlignType.Parallel
-Added Tag [Deprecated] to EnumItem AlignType.Perpendicular
+Added EnumItem CoreGuiType.Captures : 7
 
 Changed the read permissions of Property UserGameSettings.VRComfortSetting 
 	from: {RobloxScriptSecurity}
