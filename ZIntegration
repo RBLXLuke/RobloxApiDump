@@ -25,7 +25,6 @@ Added Function void ClientReplicator:RequestServerScriptProfilingData() {RobloxS
 Added Function string GeometryService:HashMeshAsync(Content meshId) {RobloxScriptSecurity} [Yields]
 Added Function Content GeometryService:StitchMeshesAsync(Array meshParts) {RobloxScriptSecurity} [Yields]
 Added Function void OpenCloudService:RegistrationComplete() {RobloxScriptSecurity}
-Added Function void RibbonNotificationService:NewNotificationFromPlugin2(string notificationId) {RobloxScriptSecurity}
 Added Function string ScriptContext:GetScriptProfilingData() {RobloxScriptSecurity}
 Added Function bool SocialService:CanSendCallInviteAsync(Instance player) [Yields]
 Added Function void SocialService:PromptPhoneBook(Instance player, string tag)
