@@ -19,6 +19,7 @@ Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelity {✏️PluginSe
 Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelityInternal {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property Enum.PrimalPhysicsSolver Workspace.PrimalPhysicsSolver [NotScriptable]
 
+Added Function void CaptureService:SaveCaptureToExternalStorage(string capturePath) {RobloxScriptSecurity}
 Added Function Dictionary ChatbotUIService:GetSettings() {RobloxScriptSecurity} [Yields]
 Added Function void ClientReplicator:RequestServerScriptProfilingData() {RobloxScriptSecurity}
 Added Function string GeometryService:HashMeshAsync(Content meshId) {RobloxScriptSecurity} [Yields]
