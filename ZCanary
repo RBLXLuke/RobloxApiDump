@@ -47,14 +47,6 @@ Added Enum PrimalPhysicsSolver
 	Added EnumItem PrimalPhysicsSolver.Experimental : 1
 	Added EnumItem PrimalPhysicsSolver.Disabled : 2
 
-Added EnumItem AlignType.PrimaryAxisParallel : 2
-Added EnumItem AlignType.PrimaryAxisPerpendicular : 3
-Added EnumItem AlignType.PrimaryAxisLookAt : 4
-Added EnumItem AlignType.AllAxes : 5
-
-Added Tag [Deprecated] to EnumItem AlignType.Parallel
-Added Tag [Deprecated] to EnumItem AlignType.Perpendicular
-
 Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
 	from: (Enum.SortDirection direction, int count, string exclusiveLowerBound = "", string exclusiveUpperBound = "")
 	  to: (Enum.SortDirection direction, int count, Variant exclusiveLowerBound, Variant exclusiveUpperBound)
