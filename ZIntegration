@@ -13,6 +13,7 @@ Added Class Path2D : GuiBase [NotReplicated]
 Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
 Added Property BinaryString DynamicImage.ImageData {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
+Added Property SharedString MeshPart.DynamicMeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 Added Property bool PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms {RobloxScriptSecurity}
 Added Property bool SlidingBallConstraint.SoftlockServoUponReachingTarget
 Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelity {✏️PluginSecurity} [<📁> LoadOnly] [NotReplicated]
@@ -29,9 +30,10 @@ Added Function string ScriptContext:GetScriptProfilingData() {RobloxScriptSecuri
 Added Function bool SocialService:CanSendCallInviteAsync(Instance player) [Yields]
 Added Function void SocialService:PromptPhoneBook(Instance player, string tag)
 Added Function Variant StreamingService:GetEphemeralVariable(string key) {RobloxScriptSecurity}
-Added Function void StreamingService:OnCommand(string requestId, string commandName, string arg) {RobloxScriptSecurity}
+Added Function void StreamingService:InvokeCommand(string requestId, string commandName, Variant arg) {RobloxScriptSecurity}
 Added Function void StreamingService:RegisterSequentialCommand(string commandName, Function function = nil) {RobloxScriptSecurity}
 Added Function void StreamingService:SetEphemeralVariable(string key, Variant value, int timeToLive = -1) {RobloxScriptSecurity}
+Added Function void StudioAssetService:FireOnUGCSubmitCompleted(bool cancelled) {RobloxScriptSecurity}
 Added Function Tuple UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
 Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
@@ -46,6 +48,7 @@ Added Event RibbonNotificationService.ToggleNotificationTray(bool checked) {Robl
 Added Event SocialService.CallInviteStateChanged(Instance player, Enum.InviteState inviteState)
 Added Event SocialService.PhoneBookPromptClosed(Instance player)
 Added Event StreamingService.SequentialCommandsFinished(string requestId, bool success) {RobloxScriptSecurity}
+Added Event StudioAssetService.OnUGCSubmitCompleted(bool cancelled) {RobloxScriptSecurity}
 Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(string sessionId) {RobloxSecurity} [Hidden]
 
 Added Callback Instance SocialService.OnCallInviteInvoked(string tag, Array callParticipantIds)
@@ -96,6 +99,10 @@ Changed the parameters of Function MemoryStoreSortedMap:SetAsync
 	from: (string key, Variant value, int64 expiration)
 	  to: (string key, Variant value, int64 expiration, Variant sortKey)
 
+Changed the parameters of Function StudioAssetService:ShowSaveToRoblox 
+	from: (Objects instances, Variant assetType)
+	  to: (Objects instances, Variant assetType, bool hasSubsequent)
+
 Changed the return-type of Function MemoryStoreSortedMap:GetAsync 
 	from: Variant
 	  to: Tuple
@@ -107,6 +114,10 @@ Changed the return-type of Function MemoryStoreSortedMap:UpdateAsync
 Changed the parameters of Event StreamingService.RequestStarted 
 	from: (string requestId)
 	  to: (string requestId, string queryToProcess)
+
+Changed the parameters of Event StudioAssetService.OnSaveToRoblox 
+	from: (Objects instances, Variant assetType)
+	  to: (Objects instances, Variant assetType, bool hasSubsequent)
 
 Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
 Removed Property Workspace.NewPhysicsSolver
