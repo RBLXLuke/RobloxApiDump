@@ -3,55 +3,55 @@ Version 601 (DEV BUILD)
 Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
 Added Class Path2D : GuiBase [NotReplicated]
-	Added Property bool Path2D.Visible {RobloxScriptSecurity}
-	Added Property int Path2D.SelectedControlPoint {RobloxScriptSecurity} [<📁> LoadOnly] [NotReplicated]
-	Added Property Vector2 Path2D.AbsoluteSize {RobloxScriptSecurity} [ReadOnly]
-	Added Property UDim2 Path2D.Position {RobloxScriptSecurity}
-	Added Function Array Path2D:GetControlPoints() {RobloxScriptSecurity}
-	Added Function void Path2D:SetControlPoints(Array controlPoints) {RobloxScriptSecurity}
+	Added Property Path2D.Visible: boolean {RobloxScriptSecurity}
+	Added Property Path2D.SelectedControlPoint: number {RobloxScriptSecurity} [📁 LoadOnly] [NotReplicated]
+	Added Property Path2D.AbsoluteSize: Vector2 {RobloxScriptSecurity} [ReadOnly]
+	Added Property Path2D.Position: UDim2 {RobloxScriptSecurity}
+	Added Function Path2D:GetControlPoints() -> { any } {RobloxScriptSecurity}
+	Added Function Path2D:SetControlPoints(controlPoints: { any }) -> () {RobloxScriptSecurity}
 
-Added Property bool CylindricalConstraint.SoftlockAngularServoUponReachingTarget
-Added Property BinaryString DynamicImage.ImageData {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property bool HingeConstraint.SoftlockServoUponReachingTarget
-Added Property SharedString MeshPart.DynamicMeshData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property bool PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms {RobloxScriptSecurity}
-Added Property bool SlidingBallConstraint.SoftlockServoUponReachingTarget
-Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelity {✏️PluginSecurity} [<📁> LoadOnly] [NotReplicated]
-Added Property Enum.FluidFidelity TriangleMeshPart.FluidFidelityInternal {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property Enum.PrimalPhysicsSolver Workspace.PrimalPhysicsSolver [NotScriptable]
+Added Property CylindricalConstraint.SoftlockAngularServoUponReachingTarget: boolean
+Added Property DynamicImage.ImageData: BinaryString {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property HingeConstraint.SoftlockServoUponReachingTarget: boolean
+Added Property MeshPart.DynamicMeshData: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms: boolean {RobloxScriptSecurity}
+Added Property SlidingBallConstraint.SoftlockServoUponReachingTarget: boolean
+Added Property TriangleMeshPart.FluidFidelity: Enum.FluidFidelity {✏️PluginSecurity} [📁 LoadOnly] [NotReplicated]
+Added Property TriangleMeshPart.FluidFidelityInternal: Enum.FluidFidelity {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property Workspace.PrimalPhysicsSolver: Enum.PrimalPhysicsSolver [NotScriptable]
 
-Added Function void CaptureService:SaveCaptureToExternalStorage(string capturePath) {RobloxScriptSecurity}
-Added Function Dictionary ChatbotUIService:GetSettings() {RobloxScriptSecurity} [Yields]
-Added Function void ClientReplicator:RequestServerScriptProfilingData() {RobloxScriptSecurity}
-Added Function string GeometryService:HashMeshAsync(Content meshId) {RobloxScriptSecurity} [Yields]
-Added Function Content GeometryService:StitchMeshesAsync(Array meshParts) {RobloxScriptSecurity} [Yields]
-Added Function void OpenCloudService:RegistrationComplete() {RobloxScriptSecurity}
-Added Function string ScriptContext:GetScriptProfilingData() {RobloxScriptSecurity}
-Added Function bool SocialService:CanSendCallInviteAsync(Instance player) [Yields]
-Added Function void SocialService:PromptPhoneBook(Instance player, string tag)
-Added Function Variant StreamingService:GetEphemeralVariable(string key) {RobloxScriptSecurity}
-Added Function void StreamingService:InvokeCommand(string requestId, string commandName, Variant arg) {RobloxScriptSecurity}
-Added Function void StreamingService:RegisterSequentialCommand(string commandName, Function function = nil) {RobloxScriptSecurity}
-Added Function void StreamingService:SetEphemeralVariable(string key, Variant value, int timeToLive = -1) {RobloxScriptSecurity}
-Added Function void StudioAssetService:FireOnUGCSubmitCompleted(bool cancelled) {RobloxScriptSecurity}
-Added Function Tuple UGCValidationService:GetDynamicHeadMeshInactiveControls(string meshId, Array controlNames) {RobloxScriptSecurity} [Yields]
-Added Function bool UGCValidationService:ValidateImageTransparencyThresholdByteString(string image, float threshold) {RobloxScriptSecurity} [Yields]
-Added Function bool UGCValidationService:ValidateImageTransparencyThresholdTextureID(string textureId, float threshold) {RobloxScriptSecurity} [Yields]
+Added Function CaptureService:SaveCaptureToExternalStorage(capturePath: string) -> () {RobloxScriptSecurity}
+Added Function ChatbotUIService:GetSettings() -> { [string]: any } {RobloxScriptSecurity} [Yields]
+Added Function ClientReplicator:RequestServerScriptProfilingData() -> () {RobloxScriptSecurity}
+Added Function GeometryService:HashMeshAsync(meshId: string) -> string {RobloxScriptSecurity} [Yields]
+Added Function GeometryService:StitchMeshesAsync(meshParts: { any }) -> string {RobloxScriptSecurity} [Yields]
+Added Function OpenCloudService:RegistrationComplete() -> () {RobloxScriptSecurity}
+Added Function ScriptContext:GetScriptProfilingData() -> string {RobloxScriptSecurity}
+Added Function SocialService:CanSendCallInviteAsync(player: Instance) -> boolean [Yields]
+Added Function SocialService:PromptPhoneBook(player: Instance, tag: string) -> ()
+Added Function StreamingService:GetEphemeralVariable(key: string) -> any {RobloxScriptSecurity}
+Added Function StreamingService:InvokeCommand(requestId: string, commandName: string, arg: any) -> () {RobloxScriptSecurity}
+Added Function StreamingService:RegisterSequentialCommand(commandName: string, function: ((...any) -> ...any)? = nil) -> () {RobloxScriptSecurity}
+Added Function StreamingService:SetEphemeralVariable(key: string, value: any, timeToLive: number? = -1) -> () {RobloxScriptSecurity}
+Added Function StudioAssetService:FireOnUGCSubmitCompleted(cancelled: boolean) -> () {RobloxScriptSecurity}
+Added Function UGCValidationService:GetDynamicHeadMeshInactiveControls(meshId: string, controlNames: { any }) -> ...any {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:ValidateImageTransparencyThresholdByteString(image: string, threshold: number) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:ValidateImageTransparencyThresholdTextureID(textureId: string, threshold: number) -> boolean {RobloxScriptSecurity} [Yields]
 
-Added Event ChatbotUIService.ActionActivatedSignal(string action) {RobloxScriptSecurity}
-Added Event ChatbotUIService.FindVariationsSignal(string action) {RobloxScriptSecurity}
-Added Event ChatbotUIService.SettingChangedSignal(string setting, Variant value) {RobloxScriptSecurity}
-Added Event ChatbotUIService.ShiftToAssetIdSignal(string action, int64 change) {RobloxScriptSecurity}
-Added Event ChatbotUIService.ShiftVariationSignal(string action, int change) {RobloxScriptSecurity}
-Added Event RibbonNotificationService.NewNotificationFromRibbon(string notificationId) {RobloxScriptSecurity}
-Added Event RibbonNotificationService.ToggleNotificationTray(bool checked) {RobloxScriptSecurity}
-Added Event SocialService.CallInviteStateChanged(Instance player, Enum.InviteState inviteState)
-Added Event SocialService.PhoneBookPromptClosed(Instance player)
-Added Event StreamingService.SequentialCommandsFinished(string requestId, bool success) {RobloxScriptSecurity}
-Added Event StudioAssetService.OnUGCSubmitCompleted(bool cancelled) {RobloxScriptSecurity}
-Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(string sessionId) {RobloxSecurity} [Hidden]
+Added Event ChatbotUIService.ActionActivatedSignal(action: string) {RobloxScriptSecurity}
+Added Event ChatbotUIService.FindVariationsSignal(action: string) {RobloxScriptSecurity}
+Added Event ChatbotUIService.SettingChangedSignal(setting: string, value: any) {RobloxScriptSecurity}
+Added Event ChatbotUIService.ShiftToAssetIdSignal(action: string, change: number) {RobloxScriptSecurity}
+Added Event ChatbotUIService.ShiftVariationSignal(action: string, change: number) {RobloxScriptSecurity}
+Added Event RibbonNotificationService.NewNotificationFromRibbon(notificationId: string) {RobloxScriptSecurity}
+Added Event RibbonNotificationService.ToggleNotificationTray(checked: boolean) {RobloxScriptSecurity}
+Added Event SocialService.CallInviteStateChanged(player: Instance, inviteState: Enum.InviteState)
+Added Event SocialService.PhoneBookPromptClosed(player: Instance)
+Added Event StreamingService.SequentialCommandsFinished(requestId: string, success: boolean) {RobloxScriptSecurity}
+Added Event StudioAssetService.OnUGCSubmitCompleted(cancelled: boolean) {RobloxScriptSecurity}
+Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(sessionId: string) {RobloxSecurity} [Hidden]
 
-Added Callback Instance SocialService.OnCallInviteInvoked(string tag, Array callParticipantIds)
+Added Callback SocialService.OnCallInviteInvoked(tag: string, callParticipantIds: { any }) -> Instance
 
 Added Enum FluidFidelity
 	Added EnumItem FluidFidelity.Automatic : 0
@@ -92,32 +92,32 @@ Changed the read permissions of Property UserGameSettings.VignetteEnabledCustomO
 	  to: {None}
 
 Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
-	from: (Enum.SortDirection direction, int count, string exclusiveLowerBound = "", string exclusiveUpperBound = "")
-	  to: (Enum.SortDirection direction, int count, Variant exclusiveLowerBound, Variant exclusiveUpperBound)
+	from: (direction: Enum.SortDirection, count: number, exclusiveLowerBound: string? = "", exclusiveUpperBound: string? = "")
+	  to: (direction: Enum.SortDirection, count: number, exclusiveLowerBound: any, exclusiveUpperBound: any)
 
 Changed the parameters of Function MemoryStoreSortedMap:SetAsync 
-	from: (string key, Variant value, int64 expiration)
-	  to: (string key, Variant value, int64 expiration, Variant sortKey)
+	from: (key: string, value: any, expiration: number)
+	  to: (key: string, value: any, expiration: number, sortKey: any)
 
 Changed the parameters of Function StudioAssetService:ShowSaveToRoblox 
-	from: (Objects instances, Variant assetType)
-	  to: (Objects instances, Variant assetType, bool hasSubsequent)
+	from: (instances: { Instance }, assetType: any)
+	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean)
 
 Changed the return-type of Function MemoryStoreSortedMap:GetAsync 
-	from: Variant
-	  to: Tuple
+	from: any
+	  to: ...any
 
 Changed the return-type of Function MemoryStoreSortedMap:UpdateAsync 
-	from: Variant
-	  to: Tuple
+	from: any
+	  to: ...any
 
 Changed the parameters of Event StreamingService.RequestStarted 
-	from: (string requestId)
-	  to: (string requestId, string queryToProcess)
+	from: (requestId: string)
+	  to: (requestId: string, queryToProcess: string)
 
 Changed the parameters of Event StudioAssetService.OnSaveToRoblox 
-	from: (Objects instances, Variant assetType)
-	  to: (Objects instances, Variant assetType, bool hasSubsequent)
+	from: (instances: { Instance }, assetType: any)
+	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean)
 
 Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
 Removed Property Workspace.NewPhysicsSolver
