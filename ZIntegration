@@ -1,5 +1,9 @@
 Version 601 (DEV BUILD)
 
+Renamed Class
+"DynamicImage" to "EditableImage"
+
+Added Class BaseRemoteEvent : Instance [NotCreatable]
 Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
 Added Class Path2D : GuiBase [NotReplicated]
@@ -10,8 +14,15 @@ Added Class Path2D : GuiBase [NotReplicated]
 	Added Function Path2D:GetControlPoints() -> { any } {RobloxScriptSecurity}
 	Added Function Path2D:SetControlPoints(controlPoints: { any }) -> () {RobloxScriptSecurity}
 
+Added Class UnreliableRemoteEvent : BaseRemoteEvent
+	Added Function UnreliableRemoteEvent:FireAllClients(arguments: ...any) -> ()
+	Added Function UnreliableRemoteEvent:FireClient(player: Player, arguments: ...any) -> ()
+	Added Function UnreliableRemoteEvent:FireServer(arguments: ...any) -> ()
+	Added Event UnreliableRemoteEvent.OnClientEvent(arguments: ...any)
+	Added Event UnreliableRemoteEvent.OnServerEvent(player: Player, arguments: ...any)
+
 Added Property CylindricalConstraint.SoftlockAngularServoUponReachingTarget: boolean
-Added Property DynamicImage.ImageData: BinaryString {RobloxSecurity} [Hidden] [NotScriptable]
+Added Property EditableImage.ImageData: BinaryString {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property HingeConstraint.SoftlockServoUponReachingTarget: boolean
 Added Property MeshPart.DynamicMeshData: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 Added Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms: boolean {RobloxScriptSecurity}
@@ -20,6 +31,8 @@ Added Property TriangleMeshPart.FluidFidelity: Enum.FluidFidelity {✏️PluginS
 Added Property TriangleMeshPart.FluidFidelityInternal: Enum.FluidFidelity {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property Workspace.PrimalPhysicsSolver: Enum.PrimalPhysicsSolver [NotScriptable]
 
+Added Function AssetService:CreateEditableImageAsync(textureId: string) -> EditableImage [Yields]
+Added Function AssetService:createDynamicMeshFromPartAsync(meshPart: Instance) -> DynamicMesh [Yields]
 Added Function CaptureService:SaveCaptureToExternalStorage(capturePath: string) -> () {RobloxScriptSecurity}
 Added Function ChatbotUIService:GetSettings() -> { [string]: any } {RobloxScriptSecurity} [Yields]
 Added Function ClientReplicator:RequestServerScriptProfilingData() -> () {RobloxScriptSecurity}
@@ -71,25 +84,19 @@ Added Enum PrimalPhysicsSolver
 
 Added EnumItem CoreGuiType.Captures : 7
 
-Changed the read permissions of Property UserGameSettings.VRComfortSetting 
-	from: {RobloxScriptSecurity}
-	  to: {None}
+Added Tag [Deprecated] to Property Sound.EmitterSize
+Added Tag [Deprecated] to Property Sound.MaxDistance
+Added Tag [Deprecated] to Property Sound.MinDistance
+Added Tag [Deprecated] to Property Sound.xmlRead_MaxDistance_3
+Added Tag [Deprecated] to Property Sound.xmlRead_MinDistance_3
 
-Changed the read permissions of Property UserGameSettings.VRSmoothRotationEnabledCustomOption 
-	from: {RobloxScriptSecurity}
-	  to: {None}
+Changed the superclass of Class RemoteEvent 
+	from: "Instance"
+	  to: "BaseRemoteEvent"
 
-Changed the read permissions of Property UserGameSettings.VRThirdPersonFollowCamEnabled 
-	from: {RobloxScriptSecurity}
-	  to: {None}
-
-Changed the read permissions of Property UserGameSettings.VRThirdPersonFollowCamEnabledCustomOption 
-	from: {RobloxScriptSecurity}
-	  to: {None}
-
-Changed the read permissions of Property UserGameSettings.VignetteEnabledCustomOption 
-	from: {RobloxScriptSecurity}
-	  to: {None}
+Changed the parameters of Function EditableImage:DrawImage 
+	from: (position: Vector2, image: DynamicImage, combineType: Enum.ImageCombineType)
+	  to: (position: Vector2, image: EditableImage, combineType: Enum.ImageCombineType)
 
 Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
 	from: (direction: Enum.SortDirection, count: number, exclusiveLowerBound: string? = "", exclusiveUpperBound: string? = "")
@@ -102,6 +109,10 @@ Changed the parameters of Function MemoryStoreSortedMap:SetAsync
 Changed the parameters of Function StudioAssetService:ShowSaveToRoblox 
 	from: (instances: { Instance }, assetType: any)
 	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean)
+
+Changed the return-type of Function EditableImage:Copy 
+	from: DynamicImage
+	  to: EditableImage
 
 Changed the return-type of Function MemoryStoreSortedMap:GetAsync 
 	from: any
@@ -122,6 +133,7 @@ Changed the parameters of Event StudioAssetService.OnSaveToRoblox
 Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
 Removed Property Workspace.NewPhysicsSolver
 
+Removed Function AssetService:CreateDynamicImageAsync
 Removed Function UGCValidationService:ValidateTextureRGBFromFile
 
 Removed Event RibbonNotificationService.NewNotificationId
