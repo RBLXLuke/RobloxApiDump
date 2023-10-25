@@ -25,6 +25,8 @@ Added Property CylindricalConstraint.SoftlockAngularServoUponReachingTarget: boo
 Added Property EditableImage.ImageData: BinaryString {RobloxSecurity} [Hidden] [NotScriptable]
 Added Property HingeConstraint.SoftlockServoUponReachingTarget: boolean
 Added Property MeshPart.DynamicMeshData: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property PackageLink.DefaultName: string {✏️NotAccessibleSecurity}
+Added Property PackageLink.SerializedDefaultAttributes: BinaryString {✏️NotAccessibleSecurity}
 Added Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms: boolean {RobloxScriptSecurity}
 Added Property SlidingBallConstraint.SoftlockServoUponReachingTarget: boolean
 Added Property TriangleMeshPart.FluidFidelity: Enum.FluidFidelity {✏️PluginSecurity} [📁 LoadOnly] [NotReplicated]
