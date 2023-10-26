@@ -4,7 +4,6 @@ Renamed Class
 "DynamicImage" to "EditableImage"
 
 Added Class BaseRemoteEvent : Instance [NotCreatable]
-Added Class EngineAPICloudProcessingService : Instance [NotCreatable] [Service] [NotReplicated]
 
 Added Class Path2D : GuiBase [NotReplicated]
 	Added Property Path2D.Visible: boolean {RobloxScriptSecurity}
@@ -14,75 +13,36 @@ Added Class Path2D : GuiBase [NotReplicated]
 	Added Function Path2D:GetControlPoints() -> { any } {RobloxScriptSecurity}
 	Added Function Path2D:SetControlPoints(controlPoints: { any }) -> () {RobloxScriptSecurity}
 
-Added Class UnreliableRemoteEvent : BaseRemoteEvent
+Added Class UnreliableRemoteEvent : BaseRemoteEvent [NotBrowsable]
 	Added Function UnreliableRemoteEvent:FireAllClients(arguments: ...any) -> ()
 	Added Function UnreliableRemoteEvent:FireClient(player: Player, arguments: ...any) -> ()
 	Added Function UnreliableRemoteEvent:FireServer(arguments: ...any) -> ()
 	Added Event UnreliableRemoteEvent.OnClientEvent(arguments: ...any)
 	Added Event UnreliableRemoteEvent.OnServerEvent(player: Player, arguments: ...any)
 
-Added Property CylindricalConstraint.SoftlockAngularServoUponReachingTarget: boolean
-Added Property EditableImage.ImageData: BinaryString {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property HingeConstraint.SoftlockServoUponReachingTarget: boolean
 Added Property MeshPart.DynamicMeshData: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
 Added Property PackageLink.DefaultName: string {✏️NotAccessibleSecurity}
 Added Property PackageLink.SerializedDefaultAttributes: BinaryString {✏️NotAccessibleSecurity}
-Added Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredMechanisms: boolean {RobloxScriptSecurity}
-Added Property SlidingBallConstraint.SoftlockServoUponReachingTarget: boolean
-Added Property TriangleMeshPart.FluidFidelity: Enum.FluidFidelity {✏️PluginSecurity} [📁 LoadOnly] [NotReplicated]
-Added Property TriangleMeshPart.FluidFidelityInternal: Enum.FluidFidelity {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property Workspace.PrimalPhysicsSolver: Enum.PrimalPhysicsSolver [NotScriptable]
 
 Added Function AssetService:CreateEditableImageAsync(textureId: string) -> EditableImage [Yields]
 Added Function AssetService:createDynamicMeshFromPartAsync(meshPart: Instance) -> DynamicMesh [Yields]
 Added Function CaptureService:SaveCaptureToExternalStorage(capturePath: string) -> () {RobloxScriptSecurity}
 Added Function ChatbotUIService:GetSettings() -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function ClientReplicator:RequestServerScriptProfilingData() -> () {RobloxScriptSecurity}
-Added Function GeometryService:HashMeshAsync(meshId: string) -> string {RobloxScriptSecurity} [Yields]
-Added Function GeometryService:StitchMeshesAsync(meshParts: { any }) -> string {RobloxScriptSecurity} [Yields]
-Added Function OpenCloudService:RegistrationComplete() -> () {RobloxScriptSecurity}
-Added Function ScriptContext:GetScriptProfilingData() -> string {RobloxScriptSecurity}
-Added Function SocialService:CanSendCallInviteAsync(player: Instance) -> boolean [Yields]
-Added Function SocialService:PromptPhoneBook(player: Instance, tag: string) -> ()
+Added Function RibbonNotificationService:OnNotificationUpdateFromPlugin(newNotificationId: string, seenNotificationId: string) -> () {RobloxScriptSecurity}
 Added Function StreamingService:GetEphemeralVariable(key: string) -> any {RobloxScriptSecurity}
 Added Function StreamingService:InvokeCommand(requestId: string, commandName: string, arg: any) -> () {RobloxScriptSecurity}
 Added Function StreamingService:RegisterSequentialCommand(commandName: string, function: ((...any) -> ...any)? = nil) -> () {RobloxScriptSecurity}
 Added Function StreamingService:SetEphemeralVariable(key: string, value: any, timeToLive: number? = -1) -> () {RobloxScriptSecurity}
 Added Function StudioAssetService:FireOnUGCSubmitCompleted(cancelled: boolean) -> () {RobloxScriptSecurity}
-Added Function UGCValidationService:GetDynamicHeadMeshInactiveControls(meshId: string, controlNames: { any }) -> ...any {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:ValidateImageTransparencyThresholdByteString(image: string, threshold: number) -> boolean {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:ValidateImageTransparencyThresholdTextureID(textureId: string, threshold: number) -> boolean {RobloxScriptSecurity} [Yields]
 
 Added Event ChatbotUIService.ActionActivatedSignal(action: string) {RobloxScriptSecurity}
 Added Event ChatbotUIService.FindVariationsSignal(action: string) {RobloxScriptSecurity}
 Added Event ChatbotUIService.SettingChangedSignal(setting: string, value: any) {RobloxScriptSecurity}
 Added Event ChatbotUIService.ShiftToAssetIdSignal(action: string, change: number) {RobloxScriptSecurity}
 Added Event ChatbotUIService.ShiftVariationSignal(action: string, change: number) {RobloxScriptSecurity}
-Added Event RibbonNotificationService.NewNotificationFromRibbon(notificationId: string) {RobloxScriptSecurity}
 Added Event RibbonNotificationService.ToggleNotificationTray(checked: boolean) {RobloxScriptSecurity}
-Added Event SocialService.CallInviteStateChanged(player: Instance, inviteState: Enum.InviteState)
-Added Event SocialService.PhoneBookPromptClosed(player: Instance)
 Added Event StreamingService.SequentialCommandsFinished(requestId: string, success: boolean) {RobloxScriptSecurity}
 Added Event StudioAssetService.OnUGCSubmitCompleted(cancelled: boolean) {RobloxScriptSecurity}
-Added Event VoiceChatService.VoiceChatSubscriptionInitialBatchEmpty(sessionId: string) {RobloxSecurity} [Hidden]
-
-Added Callback SocialService.OnCallInviteInvoked(tag: string, callParticipantIds: { any }) -> Instance
-
-Added Enum FluidFidelity
-	Added EnumItem FluidFidelity.Automatic : 0
-	Added EnumItem FluidFidelity.UseCollisionGeometry : 1
-	Added EnumItem FluidFidelity.UsePreciseGeometry : 2
-
-Added Enum InviteState
-	Added EnumItem InviteState.Placed : 0
-	Added EnumItem InviteState.Accepted : 1
-	Added EnumItem InviteState.Declined : 2
-	Added EnumItem InviteState.Missed : 3
-
-Added Enum PrimalPhysicsSolver
-	Added EnumItem PrimalPhysicsSolver.Default : 0
-	Added EnumItem PrimalPhysicsSolver.Experimental : 1
-	Added EnumItem PrimalPhysicsSolver.Disabled : 2
 
 Added EnumItem CoreGuiType.Captures : 7
 
@@ -100,14 +60,6 @@ Changed the parameters of Function EditableImage:DrawImage
 	from: (position: Vector2, image: DynamicImage, combineType: Enum.ImageCombineType)
 	  to: (position: Vector2, image: EditableImage, combineType: Enum.ImageCombineType)
 
-Changed the parameters of Function MemoryStoreSortedMap:GetRangeAsync 
-	from: (direction: Enum.SortDirection, count: number, exclusiveLowerBound: string? = "", exclusiveUpperBound: string? = "")
-	  to: (direction: Enum.SortDirection, count: number, exclusiveLowerBound: any, exclusiveUpperBound: any)
-
-Changed the parameters of Function MemoryStoreSortedMap:SetAsync 
-	from: (key: string, value: any, expiration: number)
-	  to: (key: string, value: any, expiration: number, sortKey: any)
-
 Changed the parameters of Function StudioAssetService:ShowSaveToRoblox 
 	from: (instances: { Instance }, assetType: any)
 	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean)
@@ -116,13 +68,13 @@ Changed the return-type of Function EditableImage:Copy
 	from: DynamicImage
 	  to: EditableImage
 
-Changed the return-type of Function MemoryStoreSortedMap:GetAsync 
-	from: any
-	  to: ...any
+Changed the security of Function RomarkService:EndRemoteRomarkTest 
+	from: {RobloxScriptSecurity}
+	  to: {None}
 
-Changed the return-type of Function MemoryStoreSortedMap:UpdateAsync 
-	from: any
-	  to: ...any
+Changed the parameters of Event RibbonNotificationService.NewNotificationFromRibbon 
+	from: (notificationId: string)
+	  to: (newNotificationId: string)
 
 Changed the parameters of Event StreamingService.RequestStarted 
 	from: (requestId: string)
@@ -132,15 +84,8 @@ Changed the parameters of Event StudioAssetService.OnSaveToRoblox
 	from: (instances: { Instance }, assetType: any)
 	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean)
 
-Removed Property PhysicsSettings.ShowFluidForcesForSelectedOrHoveredAssemblies
-Removed Property Workspace.NewPhysicsSolver
-
 Removed Function AssetService:CreateDynamicImageAsync
-Removed Function UGCValidationService:ValidateTextureRGBFromFile
+Removed Function RibbonNotificationService:NewNotificationFromPlugin
+Removed Function RibbonNotificationService:NewNotificationFromPlugin2
 
 Removed Event RibbonNotificationService.NewNotificationId
-
-Removed Enum PhysicsSolver
-	Removed EnumItem PhysicsSolver.Default
-	Removed EnumItem PhysicsSolver.Enabled
-	Removed EnumItem PhysicsSolver.Disabled
