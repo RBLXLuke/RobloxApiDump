@@ -1,91 +1,81 @@
-Version 601 (Roblox) 🥳
+Version 602 (Roblox) 🥳
 
 Renamed Class
-"DynamicImage" to "EditableImage"
+"DynamicMesh" to "EditableMesh"
 
-Added Class BaseRemoteEvent : Instance [NotCreatable]
+Added Class AccountService : Instance [NotCreatable] [Service] [NotReplicated]
+	Added Function AccountService:DeviceIntegrityAvailable() -> boolean {RobloxScriptSecurity}
+	Added Function AccountService:GetDeviceIntegrityToken(data: string) -> string {RobloxScriptSecurity}
 
-Added Class Path2D : GuiBase [NotReplicated]
-	Added Property Path2D.Visible: boolean {RobloxScriptSecurity}
-	Added Property Path2D.SelectedControlPoint: number {RobloxScriptSecurity} [📁 LoadOnly] [NotReplicated]
-	Added Property Path2D.AbsoluteSize: Vector2 {RobloxScriptSecurity} [ReadOnly]
-	Added Property Path2D.Position: UDim2 {RobloxScriptSecurity}
-	Added Function Path2D:GetControlPoints() -> { any } {RobloxScriptSecurity}
-	Added Function Path2D:SetControlPoints(controlPoints: { any }) -> () {RobloxScriptSecurity}
+Added Property MeshPart.EditableMeshString: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property Path2D.Color: Color3 {RobloxScriptSecurity}
+Added Property Path2D.Thickness: number {RobloxScriptSecurity}
 
-Added Class UnreliableRemoteEvent : BaseRemoteEvent [NotBrowsable]
-	Added Function UnreliableRemoteEvent:FireAllClients(arguments: ...any) -> ()
-	Added Function UnreliableRemoteEvent:FireClient(player: Player, arguments: ...any) -> ()
-	Added Function UnreliableRemoteEvent:FireServer(arguments: ...any) -> ()
-	Added Event UnreliableRemoteEvent.OnClientEvent(arguments: ...any)
-	Added Event UnreliableRemoteEvent.OnServerEvent(player: Player, arguments: ...any)
+Added Function AssetService:CreateEditableMeshAsync(meshId: string) -> EditableMesh [Yields]
+Added Function AssetService:CreateEditableMeshFromPartAsync(meshPart: Instance) -> EditableMesh [Yields]
+Added Function MaterialGenerationService:GenerateMaterialVariantsAsync(prompt: string, samples: number) -> { Instance } {RobloxScriptSecurity} [Yields]
+Added Function MaterialGenerationService:UploadMaterialVariantsAsync(materialVaraints: { Instance }) -> () {RobloxScriptSecurity} [Yields]
+Added Function Path2D:GetPositionOnCurve(t: number) -> UDim2 {RobloxScriptSecurity}
+Added Function Path2D:GetPositionOnCurveArcLength(t: number) -> UDim2 {RobloxScriptSecurity}
+Added Function Path2D:GetSegmentCount() -> number {RobloxScriptSecurity}
+Added Function Path2D:GetTangentOnCurve(t: number) -> Vector2 {RobloxScriptSecurity}
+Added Function Path2D:GetTangentOnCurveArcLength(t: number) -> Vector2 {RobloxScriptSecurity}
+Added Function StreamingService:SetPluginInfoCallback(function: ((...any) -> ...any)? = nil) -> () {RobloxScriptSecurity}
+Added Function StudioAssetService:RequestAvatarAutosetupAsync(meshId: string, textureId: string, progressCallback: (...any) -> ...any) -> Instance? {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:RegisterUGCValidationFunction(setFunction: (...any) -> ...any) -> () {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableImageSize(editableImage: EditableImage) -> boolean {RobloxScriptSecurity}
 
-Added Property MeshPart.DynamicMeshData: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property PackageLink.DefaultName: string {✏️NotAccessibleSecurity}
-Added Property PackageLink.SerializedDefaultAttributes: BinaryString {✏️NotAccessibleSecurity}
+Added Enum PromptCreateAvatarResult
+	Added EnumItem PromptCreateAvatarResult.Success : 1
+	Added EnumItem PromptCreateAvatarResult.PermissionDenied : 2
+	Added EnumItem PromptCreateAvatarResult.Timeout : 3
+	Added EnumItem PromptCreateAvatarResult.UploadFailed : 4
+	Added EnumItem PromptCreateAvatarResult.NoUserInput : 5
+	Added EnumItem PromptCreateAvatarResult.InvalidHumanoidDescription : 6
+	Added EnumItem PromptCreateAvatarResult.UGCValidationFailed : 7
+	Added EnumItem PromptCreateAvatarResult.ModeratedName : 8
+	Added EnumItem PromptCreateAvatarResult.MaxOutfits : 9
+	Added EnumItem PromptCreateAvatarResult.UnknownFailure : 10
 
-Added Function AssetService:CreateEditableImageAsync(textureId: string) -> EditableImage [Yields]
-Added Function AssetService:createDynamicMeshFromPartAsync(meshPart: Instance) -> DynamicMesh [Yields]
-Added Function CaptureService:SaveCaptureToExternalStorage(capturePath: string) -> () {RobloxScriptSecurity}
-Added Function ChatbotUIService:GetSettings() -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function RibbonNotificationService:OnNotificationUpdateFromPlugin(newNotificationId: string, seenNotificationId: string) -> () {RobloxScriptSecurity}
-Added Function StreamingService:GetEphemeralVariable(key: string) -> any {RobloxScriptSecurity}
-Added Function StreamingService:InvokeCommand(requestId: string, commandName: string, arg: any) -> () {RobloxScriptSecurity}
-Added Function StreamingService:RegisterSequentialCommand(commandName: string, function: ((...any) -> ...any)? = nil) -> () {RobloxScriptSecurity}
-Added Function StreamingService:SetEphemeralVariable(key: string, value: any, timeToLive: number? = -1) -> () {RobloxScriptSecurity}
-Added Function StudioAssetService:FireOnUGCSubmitCompleted(cancelled: boolean) -> () {RobloxScriptSecurity}
+Added Enum StudioPlaceUpdateFailureReason
+	Added EnumItem StudioPlaceUpdateFailureReason.Other : 0
+	Added EnumItem StudioPlaceUpdateFailureReason.TeamCreateConflict : 1
 
-Added Event ChatbotUIService.ActionActivatedSignal(action: string) {RobloxScriptSecurity}
-Added Event ChatbotUIService.FindVariationsSignal(action: string) {RobloxScriptSecurity}
-Added Event ChatbotUIService.SettingChangedSignal(setting: string, value: any) {RobloxScriptSecurity}
-Added Event ChatbotUIService.ShiftToAssetIdSignal(action: string, change: number) {RobloxScriptSecurity}
-Added Event ChatbotUIService.ShiftVariationSignal(action: string, change: number) {RobloxScriptSecurity}
-Added Event RibbonNotificationService.ToggleNotificationTray(checked: boolean) {RobloxScriptSecurity}
-Added Event StreamingService.SequentialCommandsFinished(requestId: string, success: boolean) {RobloxScriptSecurity}
-Added Event StudioAssetService.OnUGCSubmitCompleted(cancelled: boolean) {RobloxScriptSecurity}
+Added EnumItem AlignType.PrimaryAxisParallel : 2
+Added EnumItem AlignType.PrimaryAxisPerpendicular : 3
+Added EnumItem AlignType.PrimaryAxisLookAt : 4
+Added EnumItem AlignType.AllAxes : 5
+Added EnumItem ConnectionError.ReplacementReady : 301
 
-Added EnumItem CoreGuiType.Captures : 7
+Added Tag [Deprecated] to EnumItem AlignType.Parallel
+Added Tag [Deprecated] to EnumItem AlignType.Perpendicular
 
-Added Tag [Deprecated] to Property Sound.EmitterSize
-Added Tag [Deprecated] to Property Sound.MaxDistance
-Added Tag [Deprecated] to Property Sound.MinDistance
-Added Tag [Deprecated] to Property Sound.xmlRead_MaxDistance_3
-Added Tag [Deprecated] to Property Sound.xmlRead_MinDistance_3
+Changed the category of Property Path2D.Visible 
+	from: "Appearance"
+	  to: "Data"
 
-Changed the superclass of Class RemoteEvent 
-	from: "Instance"
-	  to: "BaseRemoteEvent"
+Changed the parameters of Event RibbonNotificationService.ToggleNotificationTray 
+	from: (checked: boolean)
+	  to: (checked: boolean, newNotificationAvailable: boolean)
 
-Changed the parameters of Function EditableImage:DrawImage 
-	from: (position: Vector2, image: DynamicImage, combineType: Enum.ImageCombineType)
-	  to: (position: Vector2, image: EditableImage, combineType: Enum.ImageCombineType)
+Changed the parameters of Event StreamingService.RequestError 
+	from: (requestId: string, errorMessage: string)
+	  to: (requestId: string, errorType: string, errorMessage: string)
 
-Changed the parameters of Function StudioAssetService:ShowSaveToRoblox 
-	from: (instances: { Instance }, assetType: any)
-	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean? = false)
+Changed the parameters of Event StudioPublishService.GamePublishFinished 
+	from: (success: boolean, gameId: number, message: string)
+	  to: (success: boolean, gameId: number, message: string, reason: Enum.StudioPlaceUpdateFailureReason)
 
-Changed the return-type of Function EditableImage:Copy 
-	from: DynamicImage
-	  to: EditableImage
+Removed Property MeshPart.DynamicMeshData
 
-Changed the security of Function RomarkService:EndRemoteRomarkTest 
-	from: {RobloxScriptSecurity}
-	  to: {None}
+Removed Function AssetService:CreateDynamicMeshAsync
+Removed Function AssetService:createDynamicMeshFromPartAsync
+Removed Function SocialService:CanSendIrisInviteAsync
+Removed Function SocialService:PromptIrisInvite
 
-Changed the parameters of Event RibbonNotificationService.NewNotificationFromRibbon 
-	from: (notificationId: string)
-	  to: (newNotificationId: string)
+Removed Event SocialService.IrisInvitePromptClosed
 
-Changed the parameters of Event StreamingService.RequestStarted 
-	from: (requestId: string)
-	  to: (requestId: string, queryToProcess: string)
+Removed Callback SocialService.OnIrisInviteInvoked
 
-Changed the parameters of Event StudioAssetService.OnSaveToRoblox 
-	from: (instances: { Instance }, assetType: any)
-	  to: (instances: { Instance }, assetType: any, hasSubsequent: boolean)
-
-Removed Function AssetService:CreateDynamicImageAsync
-Removed Function RibbonNotificationService:NewNotificationFromPlugin
-Removed Function RibbonNotificationService:NewNotificationFromPlugin2
-
-Removed Event RibbonNotificationService.NewNotificationId
+Removed Tag [NotBrowsable] from Property ScreenGui.ClipToDeviceSafeArea
+Removed Tag [NotBrowsable] from Property ScreenGui.SafeAreaCompatibility
