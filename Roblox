@@ -1,81 +1,45 @@
-Version 602 (Roblox) 🥳
+Version 603 (Roblox) 🥳
 
-Renamed Class
-"DynamicMesh" to "EditableMesh"
 
-Added Class AccountService : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Function AccountService:DeviceIntegrityAvailable() -> boolean {RobloxScriptSecurity}
-	Added Function AccountService:GetDeviceIntegrityToken(data: string) -> string {RobloxScriptSecurity}
+Added Class TextureGenerationMeshHandler : Instance [NotCreatable] [Service] [NotReplicated]
+	Added Function TextureGenerationMeshHandler:PrepareInstancesForTexturingAsync(instances: { Instance }, unwrapMode: Enum.TextureGenerationMeshHandlerUnwrapMode) -> string {RobloxScriptSecurity} [Yields]
 
-Added Property MeshPart.EditableMeshString: SharedString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property Path2D.Color: Color3 {RobloxScriptSecurity}
-Added Property Path2D.Thickness: number {RobloxScriptSecurity}
+Added Property StarterPlayer.LuaCharacterController: Enum.CharacterControlMode [NotBrowsable]
+Added Property TextBox.LocalizationMatchIdentifier: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property TextBox.LocalizationMatchedSourceText: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property TextButton.LocalizationMatchIdentifier: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property TextButton.LocalizationMatchedSourceText: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property TextLabel.LocalizationMatchIdentifier: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property TextLabel.LocalizationMatchedSourceText: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property Workspace.PlayerCharacterDestroyBehavior: Enum.PlayerCharacterDestroyBehavior [NotScriptable]
 
-Added Function AssetService:CreateEditableMeshAsync(meshId: string) -> EditableMesh [Yields]
-Added Function AssetService:CreateEditableMeshFromPartAsync(meshPart: Instance) -> EditableMesh [Yields]
-Added Function MaterialGenerationService:GenerateMaterialVariantsAsync(prompt: string, samples: number) -> { Instance } {RobloxScriptSecurity} [Yields]
-Added Function MaterialGenerationService:UploadMaterialVariantsAsync(materialVaraints: { Instance }) -> () {RobloxScriptSecurity} [Yields]
-Added Function Path2D:GetPositionOnCurve(t: number) -> UDim2 {RobloxScriptSecurity}
-Added Function Path2D:GetPositionOnCurveArcLength(t: number) -> UDim2 {RobloxScriptSecurity}
-Added Function Path2D:GetSegmentCount() -> number {RobloxScriptSecurity}
-Added Function Path2D:GetTangentOnCurve(t: number) -> Vector2 {RobloxScriptSecurity}
-Added Function Path2D:GetTangentOnCurveArcLength(t: number) -> Vector2 {RobloxScriptSecurity}
-Added Function StreamingService:SetPluginInfoCallback(function: ((...any) -> ...any)? = nil) -> () {RobloxScriptSecurity}
-Added Function StudioAssetService:RequestAvatarAutosetupAsync(meshId: string, textureId: string, progressCallback: (...any) -> ...any) -> Instance? {RobloxScriptSecurity} [Yields]
-Added Function UGCValidationService:RegisterUGCValidationFunction(setFunction: (...any) -> ...any) -> () {RobloxScriptSecurity}
-Added Function UGCValidationService:ValidateEditableImageSize(editableImage: EditableImage) -> boolean {RobloxScriptSecurity}
+Added Function BasePart:AngularAccelerationToTorque(angAcceleration: Vector3, angVelocity: Vector3? = Vector3?.new()) -> Vector3
+Added Function BasePart:TorqueToAngularAcceleration(torque: Vector3, angVelocity: Vector3? = Vector3?.new()) -> Vector3
+Added Function BaseWrap:GetCageOffset() -> Vector3 {RobloxScriptSecurity}
+Added Function PlacesService:StopPlaySolo() -> () {RobloxScriptSecurity}
+Added Function PlatformFriendsService:GetPartyMembers() -> { any } {RobloxScriptSecurity} [Yields]
+Added Function PlatformFriendsService:IsProfileEnabled() -> boolean {RobloxScriptSecurity}
+Added Function PlatformFriendsService:ShowProfile(platformUserId: string) -> () {RobloxScriptSecurity}
+Added Function Workspace:SetAvatarUnificationMode(value: Enum.AvatarUnificationMode) -> () {RobloxScriptSecurity}
+Added Function WorldRoot:Shapecast(part: BasePart, direction: Vector3, params: RaycastParams? = RaycastParams?.new()) -> RaycastResult?
 
-Added Enum PromptCreateAvatarResult
-	Added EnumItem PromptCreateAvatarResult.Success : 1
-	Added EnumItem PromptCreateAvatarResult.PermissionDenied : 2
-	Added EnumItem PromptCreateAvatarResult.Timeout : 3
-	Added EnumItem PromptCreateAvatarResult.UploadFailed : 4
-	Added EnumItem PromptCreateAvatarResult.NoUserInput : 5
-	Added EnumItem PromptCreateAvatarResult.InvalidHumanoidDescription : 6
-	Added EnumItem PromptCreateAvatarResult.UGCValidationFailed : 7
-	Added EnumItem PromptCreateAvatarResult.ModeratedName : 8
-	Added EnumItem PromptCreateAvatarResult.MaxOutfits : 9
-	Added EnumItem PromptCreateAvatarResult.UnknownFailure : 10
+Added Event ChatbotUIService.SetMaterialSettingsSignal(guid: string, studsPerTile: number, isOrganic: boolean) {RobloxScriptSecurity}
 
-Added Enum StudioPlaceUpdateFailureReason
-	Added EnumItem StudioPlaceUpdateFailureReason.Other : 0
-	Added EnumItem StudioPlaceUpdateFailureReason.TeamCreateConflict : 1
+Added Enum CharacterControlMode
+	Added EnumItem CharacterControlMode.Default : 0
+	Added EnumItem CharacterControlMode.Legacy : 1
+	Added EnumItem CharacterControlMode.NoCharacterController : 2
+	Added EnumItem CharacterControlMode.LuaCharacterController : 3
 
-Added EnumItem AlignType.PrimaryAxisParallel : 2
-Added EnumItem AlignType.PrimaryAxisPerpendicular : 3
-Added EnumItem AlignType.PrimaryAxisLookAt : 4
-Added EnumItem AlignType.AllAxes : 5
-Added EnumItem ConnectionError.ReplacementReady : 301
+Added Enum PlayerCharacterDestroyBehavior
+	Added EnumItem PlayerCharacterDestroyBehavior.Default : 0
+	Added EnumItem PlayerCharacterDestroyBehavior.Disabled : 1
+	Added EnumItem PlayerCharacterDestroyBehavior.Enabled : 2
 
-Added Tag [Deprecated] to EnumItem AlignType.Parallel
-Added Tag [Deprecated] to EnumItem AlignType.Perpendicular
+Added Enum TextureGenerationMeshHandlerUnwrapMode
+	Added EnumItem TextureGenerationMeshHandlerUnwrapMode.Never : 0
+	Added EnumItem TextureGenerationMeshHandlerUnwrapMode.Always : 1
+	Added EnumItem TextureGenerationMeshHandlerUnwrapMode.WhenInvalidUVsDetected : 2
 
-Changed the category of Property Path2D.Visible 
-	from: "Appearance"
-	  to: "Data"
-
-Changed the parameters of Event RibbonNotificationService.ToggleNotificationTray 
-	from: (checked: boolean)
-	  to: (checked: boolean, newNotificationAvailable: boolean)
-
-Changed the parameters of Event StreamingService.RequestError 
-	from: (requestId: string, errorMessage: string)
-	  to: (requestId: string, errorType: string, errorMessage: string)
-
-Changed the parameters of Event StudioPublishService.GamePublishFinished 
-	from: (success: boolean, gameId: number, message: string)
-	  to: (success: boolean, gameId: number, message: string, reason: Enum.StudioPlaceUpdateFailureReason)
-
-Removed Property MeshPart.DynamicMeshData
-
-Removed Function AssetService:CreateDynamicMeshAsync
-Removed Function AssetService:createDynamicMeshFromPartAsync
-Removed Function SocialService:CanSendIrisInviteAsync
-Removed Function SocialService:PromptIrisInvite
-
-Removed Event SocialService.IrisInvitePromptClosed
-
-Removed Callback SocialService.OnIrisInviteInvoked
-
-Removed Tag [NotBrowsable] from Property ScreenGui.ClipToDeviceSafeArea
-Removed Tag [NotBrowsable] from Property ScreenGui.SafeAreaCompatibility
+Added Tag [Deprecated] to Function InsertService:GetBaseSets
+Added Tag [NotBrowsable] to Class UIFlexItem
