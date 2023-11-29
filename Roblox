@@ -1,45 +1,33 @@
-Version 603 (Roblox) 🥳
+Version 604 (Roblox) 🥳
 
 
-Added Class TextureGenerationMeshHandler : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Function TextureGenerationMeshHandler:PrepareInstancesForTexturingAsync(instances: { Instance }, unwrapMode: Enum.TextureGenerationMeshHandlerUnwrapMode) -> string {RobloxScriptSecurity} [Yields]
+Added Class OperationGraph : Instance
 
-Added Property StarterPlayer.LuaCharacterController: Enum.CharacterControlMode [NotBrowsable]
-Added Property TextBox.LocalizationMatchIdentifier: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property TextBox.LocalizationMatchedSourceText: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property TextButton.LocalizationMatchIdentifier: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property TextButton.LocalizationMatchedSourceText: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property TextLabel.LocalizationMatchIdentifier: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property TextLabel.LocalizationMatchedSourceText: string {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
-Added Property Workspace.PlayerCharacterDestroyBehavior: Enum.PlayerCharacterDestroyBehavior [NotScriptable]
+Added Property Path2D.Transparency: number {RobloxScriptSecurity}
+Added Property StudioPublishService.PublishLocked: boolean {RobloxScriptSecurity}
+Added Property VoiceChatService.UseAudioApi: Enum.AudioApiRollout {PluginSecurity} [NotBrowsable]
 
-Added Function BasePart:AngularAccelerationToTorque(angAcceleration: Vector3, angVelocity: Vector3? = Vector3?.new()) -> Vector3
-Added Function BasePart:TorqueToAngularAcceleration(torque: Vector3, angVelocity: Vector3? = Vector3?.new()) -> Vector3
-Added Function BaseWrap:GetCageOffset() -> Vector3 {RobloxScriptSecurity}
-Added Function PlacesService:StopPlaySolo() -> () {RobloxScriptSecurity}
-Added Function PlatformFriendsService:GetPartyMembers() -> { any } {RobloxScriptSecurity} [Yields]
-Added Function PlatformFriendsService:IsProfileEnabled() -> boolean {RobloxScriptSecurity}
-Added Function PlatformFriendsService:ShowProfile(platformUserId: string) -> () {RobloxScriptSecurity}
-Added Function Workspace:SetAvatarUnificationMode(value: Enum.AvatarUnificationMode) -> () {RobloxScriptSecurity}
-Added Function WorldRoot:Shapecast(part: BasePart, direction: Vector3, params: RaycastParams? = RaycastParams?.new()) -> RaycastResult?
+Added Function CaptureService:OnSharePromptFinished(promptId: number, accepted: boolean) -> () {RobloxScriptSecurity}
+Added Function CaptureService:PromptShareCapture(contentId: string, launchData: { [string]: any }, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any) -> ()
+Added Function Constraint:GetDebugAppliedForce(bodyId: number) -> Vector3 [Preliminary]
+Added Function Constraint:GetDebugAppliedTorque(bodyId: number) -> Vector3 [Preliminary]
+Added Function EditableMesh:RaycastLocal(origin: Vector3, direction: Vector3) -> ...any
+Added Function SessionService:GenerateSessionInfoString(includeArbitrarySessions: boolean, includeTag: boolean, includeTimestamps: boolean, includeMetadata: boolean) -> string {RobloxScriptSecurity}
+Added Function Terrain:ReadVoxelChannels(region: Region3, resolution: number, channelIds: { any }) -> { [string]: any } {🧬Safe}
+Added Function Terrain:WriteVoxelChannels(region: Region3, resolution: number, channels: { [string]: any }) -> ()
 
-Added Event ChatbotUIService.SetMaterialSettingsSignal(guid: string, studsPerTile: number, isOrganic: boolean) {RobloxScriptSecurity}
+Added Event CaptureService.OpenShareCapturePrompt(promptId: number, contentId: string, capturePath: string, launchData: { [string]: any }) {RobloxScriptSecurity}
+Added Event CaptureService.UserCaptureSaved(captureContentId: string)
+Added Event StudioPublishService.OnPublishAttempt() {RobloxScriptSecurity}
 
-Added Enum CharacterControlMode
-	Added EnumItem CharacterControlMode.Default : 0
-	Added EnumItem CharacterControlMode.Legacy : 1
-	Added EnumItem CharacterControlMode.NoCharacterController : 2
-	Added EnumItem CharacterControlMode.LuaCharacterController : 3
+Added Enum AudioApiRollout
+	Added EnumItem AudioApiRollout.Disabled : 0
+	Added EnumItem AudioApiRollout.Automatic : 1
+	Added EnumItem AudioApiRollout.Enabled : 2
 
-Added Enum PlayerCharacterDestroyBehavior
-	Added EnumItem PlayerCharacterDestroyBehavior.Default : 0
-	Added EnumItem PlayerCharacterDestroyBehavior.Disabled : 1
-	Added EnumItem PlayerCharacterDestroyBehavior.Enabled : 2
+Added Tag [NotReplicated] to Class EditableImage
+Added Tag [NotReplicated] to Class EditableMesh
 
-Added Enum TextureGenerationMeshHandlerUnwrapMode
-	Added EnumItem TextureGenerationMeshHandlerUnwrapMode.Never : 0
-	Added EnumItem TextureGenerationMeshHandlerUnwrapMode.Always : 1
-	Added EnumItem TextureGenerationMeshHandlerUnwrapMode.WhenInvalidUVsDetected : 2
+Removed Class OperationTree
 
-Added Tag [Deprecated] to Function InsertService:GetBaseSets
-Added Tag [NotBrowsable] to Class UIFlexItem
+Removed Function EditableMesh:Raycast
