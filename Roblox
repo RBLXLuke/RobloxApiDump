@@ -1,33 +1,131 @@
-Version 604 (Roblox) 🥳
+Version 605 (Roblox) 🥳
 
 
-Added Class OperationGraph : Instance
+Added Class ExperienceStateCaptureService : Instance [NotCreatable] [Service] [NotReplicated]
+	Added Property ExperienceStateCaptureService.IsInCaptureMode: boolean {RobloxScriptSecurity} [Hidden] [ReadOnly]
+	Added Function ExperienceStateCaptureService:ResetHighlight() -> () {RobloxScriptSecurity}
+	Added Function ExperienceStateCaptureService:ToggleCaptureMode() -> () {RobloxScriptSecurity}
+	Added Event ExperienceStateCaptureService.ItemSelectedInCaptureMode(instance: Instance) {RobloxScriptSecurity}
 
-Added Property Path2D.Transparency: number {RobloxScriptSecurity}
-Added Property StudioPublishService.PublishLocked: boolean {RobloxScriptSecurity}
-Added Property VoiceChatService.UseAudioApi: Enum.AudioApiRollout {PluginSecurity} [NotBrowsable]
+Added Class PlatformCloudStorageService : Instance [NotCreatable] [Service] [NotReplicated]
+	Added Function PlatformCloudStorageService:GetUserDataAsync(key: string) -> { [string]: any } {RobloxScriptSecurity} [Yields]
+	Added Function PlatformCloudStorageService:IsUserDataAvailable() -> boolean {RobloxScriptSecurity}
+	Added Function PlatformCloudStorageService:SetUserDataAsync(key: string, data: { [string]: any }) -> () {RobloxScriptSecurity} [Yields]
 
-Added Function CaptureService:OnSharePromptFinished(promptId: number, accepted: boolean) -> () {RobloxScriptSecurity}
-Added Function CaptureService:PromptShareCapture(contentId: string, launchData: { [string]: any }, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any) -> ()
-Added Function Constraint:GetDebugAppliedForce(bodyId: number) -> Vector3 [Preliminary]
-Added Function Constraint:GetDebugAppliedTorque(bodyId: number) -> Vector3 [Preliminary]
-Added Function EditableMesh:RaycastLocal(origin: Vector3, direction: Vector3) -> ...any
-Added Function SessionService:GenerateSessionInfoString(includeArbitrarySessions: boolean, includeTag: boolean, includeTimestamps: boolean, includeMetadata: boolean) -> string {RobloxScriptSecurity}
-Added Function Terrain:ReadVoxelChannels(region: Region3, resolution: number, channelIds: { any }) -> { [string]: any } {🧬Safe}
-Added Function Terrain:WriteVoxelChannels(region: Region3, resolution: number, channels: { [string]: any }) -> ()
+Added Class MemoryStoreHashMapPages : Pages [NotCreatable] [NotReplicated]
 
-Added Event CaptureService.OpenShareCapturePrompt(promptId: number, contentId: string, capturePath: string, launchData: { [string]: any }) {RobloxScriptSecurity}
-Added Event CaptureService.UserCaptureSaved(captureContentId: string)
-Added Event StudioPublishService.OnPublishAttempt() {RobloxScriptSecurity}
+Added Property PhysicsSettings.AreGravityForcesShownForSelectedOrHoveredAssemblies: boolean {RobloxScriptSecurity}
+Added Property ScreenshotHud.HideCoreGuiForCaptures: boolean
+Added Property ScreenshotHud.HidePlayerGuiForCaptures: boolean
 
-Added Enum AudioApiRollout
-	Added EnumItem AudioApiRollout.Disabled : 0
-	Added EnumItem AudioApiRollout.Automatic : 1
-	Added EnumItem AudioApiRollout.Enabled : 2
+Added Function CaptureService:OnCaptureBegan() -> () {RobloxScriptSecurity}
+Added Function CaptureService:OnCaptureEnded() -> () {RobloxScriptSecurity}
+Added Function CaptureService:OnSavePromptFinished(promptId: number, results: { [string]: any }) -> () {RobloxScriptSecurity}
+Added Function CaptureService:PromptSaveCapturesToGallery(contentIds: { any }, resultCallback: (...any) -> ...any) -> ()
+Added Function MemoryStoreHashMap:ListItemsAsync(count: number) -> MemoryStoreHashMapPages [Yields]
+Added Function SessionService:AcquireContextFocus(context: string) -> () {RobloxScriptSecurity}
+Added Function SessionService:GetSessionTag(sid: string) -> string {RobloxScriptSecurity}
+Added Function SessionService:IsContextFocused(context: string) -> boolean {RobloxScriptSecurity}
+Added Function SessionService:ReleaseContextFocus(context: string) -> () {RobloxScriptSecurity}
+Added Function StreamingService:ExecuteCommandAsync(requestId: string, commandName: string, arg: any) -> () {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:CalculateEditableMeshUniqueUVCount(editableMesh: EditableMesh) -> number {RobloxScriptSecurity}
+Added Function UGCValidationService:CheckEditableMeshInCameraFrustum(editableMesh: EditableMesh, meshScale: Vector3, handleWorldCF: CFrame, cameraWorldCF: CFrame) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:CompareTextureOverlapByteString(byteStringBaseline: string, byteStringFollowup: string) -> { any } [Yields]
+Added Function UGCValidationService:CompareTextureOverlapTextureId(textureIdBaseline: string, textureIdFollowup: string) -> { any } {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:GetDynamicHeadEditableMeshInactiveControls(editableMesh: EditableMesh, controlNames: { any }) -> ...any {RobloxScriptSecurity}
+Added Function UGCValidationService:GetEditableImageSize(editableImage: EditableImage) -> Vector2 {RobloxScriptSecurity}
+Added Function UGCValidationService:GetEditableMeshTriCount(editableMesh: EditableMesh) -> number {RobloxScriptSecurity}
+Added Function UGCValidationService:GetEditableMeshVertColors(editableMesh: EditableMesh) -> { any } {RobloxScriptSecurity}
+Added Function UGCValidationService:GetEditableMeshVerts(editableMesh: EditableMesh) -> { any } {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateDynamicHeadEditableMesh(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableImageNumTextureChannels(editableImage: EditableImage, numTextureChannelsRequired: number) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshBounds(editableMesh: EditableMesh, meshScale: Vector3, boundsOffset: Vector3, attachmentCF: CFrame, handleCF: CFrame) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshCageMeshIntersection(innerCage: EditableMesh, outerCage: EditableMesh, refMesh: EditableMesh) -> ...any {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshCageNonManifoldAndHoles(editableMesh: EditableMesh) -> ...any {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshCageUVTriangleArea(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshFullBodyCageDeletion(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshMisMatchUV(innerCage: EditableMesh, outerCage: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshOverlappingVertices(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshTriangleArea(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshTriangles(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshUVSpace(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshUVValuesInReference(referenceValues: { any }, editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshUniqueUVCount(editableMesh: EditableMesh, numRequired: number) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateEditableMeshVertColors(editableMesh: EditableMesh, includeAlpha: boolean? = true) -> boolean {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateSkinnedEditableMesh(editableMesh: EditableMesh) -> boolean {RobloxScriptSecurity}
 
-Added Tag [NotReplicated] to Class EditableImage
-Added Tag [NotReplicated] to Class EditableMesh
+Added Event CaptureService.CaptureBegan()
+Added Event CaptureService.CaptureEnded()
+Added Event CaptureService.OpenSaveCapturesPrompt(promptId: number, contentIds: { any }) {RobloxScriptSecurity}
+Added Event VoiceChatService.TurnServerInfoAcked(eventTag: number, userId: number, turnServerInfo: string) {RobloxSecurity} [Hidden]
+Added Event VoiceChatService.TurnServerInfoRequested(eventTag: number, userId: number) {RobloxSecurity} [Hidden]
 
-Removed Class OperationTree
+Added Enum HttpCompression
+	Added EnumItem HttpCompression.None : 0
+	Added EnumItem HttpCompression.Gzip : 1
 
-Removed Function EditableMesh:Raycast
+Added Tag [Deprecated] to Function UserInputService:GetUserCFrame
+Added Tag [Deprecated] to Event UserInputService.UserCFrameChanged
+
+Changed the security of Property TextBox.LocalizationMatchIdentifier 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
+
+Changed the security of Property TextBox.LocalizationMatchedSourceText 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
+
+Changed the security of Property TextButton.LocalizationMatchIdentifier 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
+
+Changed the security of Property TextButton.LocalizationMatchedSourceText 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
+
+Changed the security of Property TextLabel.LocalizationMatchIdentifier 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
+
+Changed the security of Property TextLabel.LocalizationMatchedSourceText 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
+
+Changed the parameters of Function CaptureService:PromptShareCapture 
+	from: (contentId: string, launchData: { [string]: any }, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any)
+	  to: (contentId: string, launchData: string, onAcceptedCallback: (...any) -> ...any, onDeniedCallback: (...any) -> ...any)
+
+Changed the parameters of Function CollectionService:GetCollection 
+	from: (class: string)
+	  to: (clazz: string)
+
+Changed the parameters of Function SessionService:RemoveMetadata 
+	from: (sid: string, key: string)
+	  to: (sid: string, key: string, context: string? = "")
+
+Changed the parameters of Function SessionService:RemoveSession 
+	from: (sid: string)
+	  to: (sid: string, context: string? = "")
+
+Changed the parameters of Function SessionService:SetMetadata 
+	from: (sid: string, key: string, value: any)
+	  to: (sid: string, key: string, value: any, context: string? = "")
+
+Changed the parameters of Function SessionService:SetSession 
+	from: (parentSid: string, childSid: string, tag: string)
+	  to: (parentSid: string, childSid: string, tag: string, context: string? = "")
+
+Changed the parameters of Event CaptureService.OpenShareCapturePrompt 
+	from: (promptId: number, contentId: string, capturePath: string, launchData: { [string]: any })
+	  to: (promptId: number, contentId: string, capturePath: string, launchData: string)
+
+Changed the security of Event CaptureService.CaptureSaved 
+	from: {RobloxScriptSecurity}
+	  to: {None}
+
+Removed Tag [NotScriptable] from Property TextBox.LocalizationMatchIdentifier
+Removed Tag [NotScriptable] from Property TextBox.LocalizationMatchedSourceText
+Removed Tag [NotScriptable] from Property TextButton.LocalizationMatchIdentifier
+Removed Tag [NotScriptable] from Property TextButton.LocalizationMatchedSourceText
+Removed Tag [NotScriptable] from Property TextLabel.LocalizationMatchIdentifier
+Removed Tag [NotScriptable] from Property TextLabel.LocalizationMatchedSourceText
