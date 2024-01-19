@@ -1,144 +1,29 @@
-Version 607 (Roblox) 🥳
+Version 608 (Roblox) 🥳
 
-Added Class ConnectivityService : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Property ConnectivityService.NetworkStatus: Enum.NetworkStatus {RobloxScriptSecurity} [ReadOnly]
-	Added Function ConnectivityService:IsNetworkStateAvailable() -> boolean {RobloxScriptSecurity}
+Added Property Collaborator.IsIdle: boolean
 
-Added Class ConversationalAIAcceptanceService : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Function ConversationalAIAcceptanceService:AlternativeAssetSelected(requestId: string, previousAssetId: number, assetId: number) -> () {RobloxScriptSecurity}
-	Added Function ConversationalAIAcceptanceService:AssetInserted(requestId: string, assetId: number) -> () {RobloxScriptSecurity}
-	Added Function ConversationalAIAcceptanceService:InstanceInserted(requestId: string) -> () {RobloxScriptSecurity}
+Added Function CaptureService:CaptureScreenshot(onCaptureReady: (...any) -> ...any) -> ()
+Added Function DraftsService:ShowSourceDiffsAgainstCurrent(sources: { any }, scripts: { Instance }) -> () {RobloxScriptSecurity}
+Added Function PlayerViewService:OnCameraCFrameReplicationRequest() -> () {RobloxScriptSecurity}
+Added Function PlayerViewService:UpdateDeviceCFrame(player: Player? = nil, cframe: CFrame? = CFrame?.new(), timestamp: number? = 0) -> () {RobloxScriptSecurity}
+Added Function UGCValidationService:ResetCollisionFidelityWithEditableMeshDataLua(meshPart: MeshPart, editableMesh: EditableMesh, collisionFidelity: Enum.CollisionFidelity? = "Box") -> () {RobloxScriptSecurity}
 
-Added Class StartupMessageService : Instance [NotCreatable] [Service] [NotReplicated]
-	Added Function StartupMessageService:GetStartupMessage() -> any {RobloxScriptSecurity}
+Added Event CollaboratorsService.CollaboratorIdleUpdate(collaboratorId: number, isIdle: boolean) {RobloxSecurity} [Hidden]
 
-Added Class RobloxEditableImage : EditableImage
-	Added Property RobloxEditableImage.ImageDataSerialize: BinaryString {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Changed the parameters and return-type of Function ScriptContext:SaveScriptProfilingData 
+	from: (filename: string) ()
+	  to: (jsonString: string, filename: string) string
 
-Added Property AnimationStreamTrack.FACSDataLod: Enum.FACSDataLod [Hidden] [ReadOnly]
+Removed Property StarterPlayer.AnimationCompositorMode
+Removed Property StarterPlayer.HumanoidStateMachineMode
 
-Added Function Animator:SynchronizeWith(otherAnimator: Animator) -> () {RobloxScriptSecurity}
-Added Function AssetImportSession:GetCurrentStatusTable_DEPRECATED() -> { [string]: any } {RobloxScriptSecurity}
-Added Function AssetImportSession:GetRigVisualization_DEPRECATED() -> Instance? {RobloxScriptSecurity} [Preliminary]
-Added Function AssetImportSession:GetStatuses() -> { [string]: any } {RobloxScriptSecurity}
-Added Function AssetManagerService:InsertImages(assetIds: { any }) -> () {RobloxScriptSecurity}
-Added Function AssetService:CreateEditableMeshStripSkinningAsync(meshId: string) -> EditableMesh {RobloxScriptSecurity} [Yields]
-Added Function BaseImportData:GetPreview() -> Instance? {RobloxScriptSecurity}
-Added Function ClientReplicator:RequestServerLuauHeapData() -> () {RobloxScriptSecurity}
-Added Function ScriptContext:GetLuauHeapInstanceReferenceReport(target: string) -> { [string]: any } {RobloxScriptSecurity} [CustomLuaState]
-Added Function ScriptContext:GetLuauHeapMemoryReport(target: string) -> { [string]: any } {RobloxScriptSecurity} [CustomLuaState]
-Added Function VideoFrame:SetStudioPreview(isPreview: boolean) -> () {RobloxScriptSecurity}
+Removed Enum AnimationCompositorMode
+	Removed EnumItem AnimationCompositorMode.Default
+	Removed EnumItem AnimationCompositorMode.Enabled
+	Removed EnumItem AnimationCompositorMode.Disabled
 
-Added Event AvatarCreationService.UgcValidationFailure(guid: string, errorMessage: string) {RobloxScriptSecurity}
-Added Event AvatarCreationService.UgcValidationSuccess(guid: string, serializedModel: string) {RobloxScriptSecurity}
-Added Event VoiceChatService.SubscriptionInitialClientDescriptor(eventTag: number, initialClientDescriptor: string, sessionId: string) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscriptionInitialClientDescriptorRequested(eventTag: number, sessionId: string) {RobloxSecurity} [Hidden]
-Added Event VoiceChatService.SubscriptionReset(sessionId: string) {RobloxSecurity} [Hidden]
-
-Added Enum FACSDataLod
-	Added EnumItem FACSDataLod.LOD0 : 0
-	Added EnumItem FACSDataLod.LOD1 : 1
-	Added EnumItem FACSDataLod.LODCount : 2
-
-Added Enum NetworkStatus
-	Added EnumItem NetworkStatus.Unknown : 0
-	Added EnumItem NetworkStatus.Connected : 1
-	Added EnumItem NetworkStatus.Disconnected : 2
-
-Changed the parameters of Function AssetImportSession:GetRigVisualization 
-	from: ()
-	  to: (importDataInstance: Instance)
-
-Changed the parameters of Function AvatarEditorService:NoPromptCreateOutfit 
-	from: (humanoidDescription: HumanoidDescription, rigType: Enum.HumanoidRigType, name: string)
-	  to: (humanoidDescription: HumanoidDescription, rigType: Enum.HumanoidRigType, name: string, gearAssetId: number? = 0)
-
-Changed the parameters of Function AvatarEditorService:NoPromptUpdateOutfit 
-	from: (outfitId: number, humanoidDescription: HumanoidDescription, rigType: Enum.HumanoidRigType)
-	  to: (outfitId: number, humanoidDescription: HumanoidDescription, rigType: Enum.HumanoidRigType, gearAssetId: number? = 0)
-
-Changed the parameters of Function CollectionService:GetCollection 
-	from: (clazz: string)
-	  to: (class: string)
-
-Changed the parameters of Function PackageUIService:PublishPackage 
-	from: (packageInstance: Instance)
-	  to: (packageInstance: Instance, addUndoWayPoint: boolean)
-
-Changed the return-type of Function Model:GetBoundingBox 
-	from: ...any
-	  to: (CFrame, Vector3)
-
-Changed the return-type of Function TextService:FilterAndTranslateStringAsync 
-	from: Instance?
-	  to: TextFilterTranslatedResult
-
-Changed the return-type of Function TextService:FilterStringAsync 
-	from: Instance?
-	  to: TextFilterResult
-
-Changed the security of Function AudioAnalyzer:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioChorus:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioCompressor:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioDeviceInput:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioDeviceOutput:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioDistortion:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioEcho:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioEmitter:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioEqualizer:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioFader:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioFlanger:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioListener:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioPitchShifter:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioPlayer:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Changed the security of Function AudioReverb:GetConnectedWires 
-	from: {RobloxScriptSecurity}
-	  to: {PluginSecurity}
-
-Removed Property EditableMesh.MeshVersion
-
-Removed Function AssetImportSession:GetCurrentStatusTable
-
-Removed Tag [NotReplicated] from Class AvatarCreationService
+Removed Enum HumanoidStateMachineMode
+	Removed EnumItem HumanoidStateMachineMode.Default
+	Removed EnumItem HumanoidStateMachineMode.Legacy
+	Removed EnumItem HumanoidStateMachineMode.NoStateMachine
+	Removed EnumItem HumanoidStateMachineMode.LuaStateMachine
