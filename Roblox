@@ -1,29 +1,26 @@
-Version 608 (Roblox) 🥳
+Version 609 (Roblox) 🥳
 
-Added Property Collaborator.IsIdle: boolean
+Added Property PartOperation.DCDPropertyData: CSGPropertyData {RobloxSecurity} [Hidden] [NotReplicated] [NotScriptable]
+Added Property UserGameSettings.ChatTranslationLocale: string {RobloxScriptSecurity} [Hidden] [NotReplicated]
 
-Added Function CaptureService:CaptureScreenshot(onCaptureReady: (...any) -> ...any) -> ()
-Added Function DraftsService:ShowSourceDiffsAgainstCurrent(sources: { any }, scripts: { Instance }) -> () {RobloxScriptSecurity}
-Added Function PlayerViewService:OnCameraCFrameReplicationRequest() -> () {RobloxScriptSecurity}
-Added Function PlayerViewService:UpdateDeviceCFrame(player: Player? = nil, cframe: CFrame? = CFrame?.new(), timestamp: number? = 0) -> () {RobloxScriptSecurity}
-Added Function UGCValidationService:ResetCollisionFidelityWithEditableMeshDataLua(meshPart: MeshPart, editableMesh: EditableMesh, collisionFidelity: Enum.CollisionFidelity? = "Box") -> () {RobloxScriptSecurity}
+Added Function CollaboratorsService:GetCollaboratorsList() -> { Instance } {RobloxScriptSecurity}
+Added Function PlayerViewService:GetDeviceCameraCFrameForSelfView() -> CFrame {RobloxScriptSecurity}
+Added Function RunService:GetRobloxGuiFocused() -> boolean {RobloxScriptSecurity}
 
-Added Event CollaboratorsService.CollaboratorIdleUpdate(collaboratorId: number, isIdle: boolean) {RobloxSecurity} [Hidden]
+Added Event RunService.RobloxGuiFocusedChanged(isRobloxGuiFocused: boolean) {RobloxScriptSecurity}
 
-Changed the parameters and return-type of Function ScriptContext:SaveScriptProfilingData 
-	from: (filename: string) ()
-	  to: (jsonString: string, filename: string) string
+Changed the security of Event CollaboratorsService.CollaboratorInstanceCreatedSignal 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
 
-Removed Property StarterPlayer.AnimationCompositorMode
-Removed Property StarterPlayer.HumanoidStateMachineMode
+Changed the security of Event CollaboratorsService.CollaboratorInstanceDestroyedSignal 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
 
-Removed Enum AnimationCompositorMode
-	Removed EnumItem AnimationCompositorMode.Default
-	Removed EnumItem AnimationCompositorMode.Enabled
-	Removed EnumItem AnimationCompositorMode.Disabled
+Changed the security of Event CollaboratorsService.CollaboratorStatusUpdateRequestedSignal 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
 
-Removed Enum HumanoidStateMachineMode
-	Removed EnumItem HumanoidStateMachineMode.Default
-	Removed EnumItem HumanoidStateMachineMode.Legacy
-	Removed EnumItem HumanoidStateMachineMode.NoStateMachine
-	Removed EnumItem HumanoidStateMachineMode.LuaStateMachine
+Changed the security of Event CollaboratorsService.CollaboratorStatusUpdatedSignal 
+	from: {RobloxSecurity}
+	  to: {RobloxScriptSecurity}
