@@ -1,5 +1,4 @@
 Version 616 (Roblox) 🥳
-
 Added Class VideoDeviceInput : Instance [NotReplicated]
 	Added Property VideoDeviceInput.Active: boolean
 	Added Property VideoDeviceInput.CameraId: string
