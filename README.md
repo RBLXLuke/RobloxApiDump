@@ -5,5 +5,7 @@ This repository is committed to maintaining currency through timely updates alig
 Channels in Sync with Live:
 
 zLiveforbeta
+
 ZBeta
 # updates weekly
+current Major version 600+ (updates every milestone)
