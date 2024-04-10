@@ -1,6 +1,9 @@
 # RobloxApiDump
-This Repository Will be Updated once Roblox pushes a API Dump to Roblox 
 
-Updates every week with deployment
+This repository is committed to maintaining currency through timely updates aligned with Roblox's API dumps.
 
-This excludes Holidays where Roblox employees are not working!
+Channels in Sync with Live:
+
+zLiveforbeta
+ZBeta
+# updates weekly
