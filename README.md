@@ -4,7 +4,6 @@ This repository is committed to maintaining currency through timely updates alig
 
 Channels in Sync with Live:
 
-zLiveforbeta
 
 ZBeta
 # updates weekly
