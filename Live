@@ -1,29 +1,41 @@
-Version 0.626.1.6260363 (Live)
-Added Property Explosion.LocalTransparencyModifier: number [Hidden] [NotReplicated]
-Added Property Fire.LocalTransparencyModifier: number [Hidden] [NotReplicated]
-Added Property Smoke.LocalTransparencyModifier: number [Hidden] [NotReplicated]
-Added Property Sparkles.LocalTransparencyModifier: number [Hidden] [NotReplicated]
+Version 0.628.0.6280391
+Added Class LinkingService : Instance [NotCreatable] [NotReplicated] [Service]
+Added Function LinkingService:DetectUrl(url: string) -> () {RobloxScriptSecurity}
+Added Function LinkingService:GetAndClearLastPendingUrl() -> { [string]: any } {RobloxScriptSecurity}
+Added Function LinkingService:GetLastLuaUrl() -> string? {RobloxScriptSecurity}
+Added Function LinkingService:IsUrlRegistered(url: string) -> boolean {RobloxScriptSecurity}
+Added Function LinkingService:OpenUrl(url: string) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function LinkingService:RegisterLuaUrl(url: string) -> () {RobloxScriptSecurity}
+Added Function LinkingService:StartLuaUrlDelivery() -> { [string]: any }? {RobloxScriptSecurity}
+Added Function LinkingService:StopLuaUrlDelivery() -> () {RobloxScriptSecurity}
+Added Function LinkingService:SupportsSwitchToSettingsApp() -> boolean {RobloxScriptSecurity} [Yields]
+Added Function LinkingService:SwitchToSettingsApp(route: string?) -> () {RobloxScriptSecurity} [Yields]
+Added Event LinkingService.OnLuaUrl(url: string, matchedUrl: string, attributionUrl: string?) {RobloxScriptSecurity}
 
-Added Function AvatarCreationService:SendAnalyticsEvent(eventName: string, params: { [string]: any }) -> ()
+Added Property AudioChorus.Bypass: boolean
+Added Property AudioCompressor.Bypass: boolean
+Added Property AudioDistortion.Bypass: boolean
+Added Property AudioEcho.Bypass: boolean
+Added Property AudioEqualizer.Bypass: boolean
+Added Property AudioFader.Bypass: boolean
+Added Property AudioFlanger.Bypass: boolean
+Added Property AudioPitchShifter.Bypass: boolean
+Added Property AudioReverb.Bypass: boolean
+Added Property UserGameSettings.HapticStrength: number {RobloxScriptSecurity} [Hidden] [NotReplicated]
+Added Property Workspace.MoverConstraintRootBehavior: Enum.MoverConstraintRootBehaviorMode [NotScriptable]
 
-Added EnumItem MarketplaceItemPurchaseStatus.PlaceInvalid : 13
+Added Function StudioDeviceEmulatorService:GetKeyboardShortcut(deviceId: number, gamepadKey: Enum.KeyCode, position: Vector3) -> { any } {RobloxScriptSecurity} [Yields]
+Added Function StudioDeviceEmulatorService:UpdateKeyMapping(deviceId: number, keyboardShortcut: { any }, gamepadKey: Enum.KeyCode, position: Vector3) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:ReportUGCValidationTelemetry(assetType: string, data: { [string]: any }) -> () {RobloxScriptSecurity}
+Added Function UGCValidationService:ValidateImageTransparencyThresholdByteString_V2(image: string, threshold: number) -> boolean {RobloxScriptSecurity} [Yields]
+Added Function UGCValidationService:ValidateImageTransparencyThresholdTextureID_V2(textureId: string, threshold: number) -> boolean {RobloxScriptSecurity} [Yields]
 
-Changed the parameters of Function ConversationalAIAcceptanceService:CodeRunnerActivated
-from:(requestId: string, code: string)
-to:(requestId: string, code: string, serverAutorun: boolean, autorunEnabled: boolean, autoExpandDropdowns: boolean)
+Added Enum MoverConstraintRootBehaviorMode
+Added EnumItem MoverConstraintRootBehaviorMode.Default : 0
+Added EnumItem MoverConstraintRootBehaviorMode.Disabled : 1
+Added EnumItem MoverConstraintRootBehaviorMode.Enabled : 2
 
-Changed the security of Function InsertService:CreateMeshPartAsync
-from:{PluginSecurity}
-to:{None}
-
-Changed the parameters of Event CaptureService.CaptureSavedInternal
-from:(captureInfo: { [string]: any })
-to:(captureInfo: { [string]: any }, triggerSource: string)
-
-Removed Property Studio.Server Audio Behavior
-
-Removed Enum ServerAudioBehavior
-Removed EnumItem ServerAudioBehavior.Enabled
-Removed EnumItem ServerAudioBehavior.Muted
-Removed EnumItem ServerAudioBehavior.OnlineGame
-ptureService
+Added Tag [Hidden] to Property TriangleMeshPart.UnscaledCofm
+Added Tag [Hidden] to Property TriangleMeshPart.UnscaledVolInertiaDiags
+Added Tag [Hidden] to Property TriangleMeshPart.UnscaledVolInertiaOffDiags
+Added Tag [Hidden] to Property TriangleMeshPart.UnscaledVolume
