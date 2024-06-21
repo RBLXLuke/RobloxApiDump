@@ -1,4 +1,4 @@
-Version 0.630.0.6300555
+Version 0.630.0.6300556
 Added Class AppLifecycleObserverService : Instance [NotCreatable] [NotReplicated] [Service]
 Added Function AppLifecycleObserverService:IsDidDetachSupported() -> boolean {RobloxScriptSecurity}
 Added Event AppLifecycleObserverService.OnBecomeActive() {RobloxScriptSecurity}
@@ -20,6 +20,8 @@ Added Event MaterialService.MaterialFillToolEnabledChanged(shouldEnable: boolean
 Added Event SoundService.OpenAudioEqualizerEditorSignal(selectedEqualizerObjects: { Instance }) {RobloxScriptSecurity}
 
 Added Tag [Yields] to Function AvatarGenerationJob:Cancel
+
+Removed Tag [NotBrowsable] from Class Path2D
 
 Removed Tag [NotReplicated] from Class EditableMesh
 Removed Tag [NotReplicated] from Property EditableMesh.MeshData
