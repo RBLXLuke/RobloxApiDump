@@ -1,10 +1,6 @@
 # RobloxApiDump
 
-This repository is committed to maintaining currency through timely updates aligned with Roblox's API dumps.
+Welcome to the API Dumps Repository, your go-to source for the latest API dumps. This repository is meticulously maintained and updated with every new release of API dumps, ensuring you have access to the most current and comprehensive data available.
 
-Channels in Sync with Live:
-
-
-ZBeta
 # updates weekly
 current Major version 600+ (updates every milestone)
