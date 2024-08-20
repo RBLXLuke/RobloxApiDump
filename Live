@@ -1,109 +1,58 @@
-Version 0.637.0.6370729
-Added Class CloudCRUDService : Instance [NotCreatable] [NotReplicated] [Service]
+Version 0.638.1.6380615
+Added Class HapticEffect : Instance
+Added Property HapticEffect.Looped: boolean
+Added Property HapticEffect.Position: Vector3 {RobloxScriptSecurity}
+Added Property HapticEffect.Radius: number {RobloxScriptSecurity}
+Added Property HapticEffect.Type: Enum.HapticEffectType
+Added Property HapticEffect.Waveform: FloatCurve? {RobloxScriptSecurity}
+Added Function HapticEffect:Play() -> ()
+Added Function HapticEffect:Stop() -> ()
 
-Added Property Animator.FacsReplicationData: FacsReplicationData {RobloxSecurity} [Hidden] [NotScriptable]
-Added Property AudioAnalyzer.SpectrumEnabled: boolean
-Added Property CanvasGroup.ResolutionScale: number {RobloxScriptSecurity}
+Added Property VRService.ControllerModels: Enum.VRControllerModelMode
+Added Property VRService.LaserPointer: Enum.VRLaserPointerMode
 
-Added Function AnalyticsService:LogCustomEvent(player: Player, eventName: string, value: number? = 1, customFields: { [string]: any }?) -> ()
-Added Function Animator:LoadStreamAnimationV2(animation: TrackerStreamAnimation, player: Player?, shouldLookupPlayer: boolean? = true, shouldReplicate: boolean? = true) -> AnimationStreamTrack {RobloxScriptSecurity}
-Added Function AppLifecycleObserverService:GetCurrentState() -> Enum.AppLifecycleManagerState {RobloxScriptSecurity}
-Added Function MaterialGenerationService:DEPRECATED_UploadMaterialVariantsAsync(materialVaraints: { Instance }) -> () {RobloxScriptSecurity} [Yields]
-Added Function PublishService:CreateAssetOrAssetVersionAndPollAssetWithTelemetryAsyncWithAddParam(serializedInstance: string, publishInfo: { [string]: any }) -> { [string]: any } {RobloxScriptSecurity} [Yields]
-Added Function StylingService:UpdateUnitTestOnly() -> () {RobloxScriptSecurity}
-Added Function UGCValidationService:GetEditableMeshMaxNearbyVerticesCollisions(editableMesh: EditableMesh, meshScale: Vector3) -> number {RobloxScriptSecurity}
-Added Function UGCValidationService:GetMaxNearbyVerticesCollisions(meshId: string, meshScale: Vector3) -> number {RobloxScriptSecurity} [Yields]
+Added Function AvatarCreationService:GenerateAvatarModelAsync(player: Player, previewJobId: string, options: { [string]: any }, progressCallback: (...any) -> ...any) -> string [Yields]
+Added Function AvatarCreationService:GenerateAvatarPreviewAsync(player: Player, textPrompt: string, options: { [string]: any }, progressCallback: (...any) -> ...any) -> string [Yields]
+Added Function ScriptContext:ReportLuaRequireCount() -> () {RobloxScriptSecurity}
+Added Function UserInputService:GetDeviceLevel() -> Enum.DeviceLevel {RobloxScriptSecurity}
 
-Added Enum AppLifecycleManagerState
-Added EnumItem AppLifecycleManagerState.Detached : 0
-Added EnumItem AppLifecycleManagerState.Active : 1
-Added EnumItem AppLifecycleManagerState.Inactive : 2
-Added EnumItem AppLifecycleManagerState.Hidden : 3
+Added Enum DeviceLevel
+Added EnumItem DeviceLevel.Low : 0
+Added EnumItem DeviceLevel.Medium : 1
+Added EnumItem DeviceLevel.High : 2
 
-Added EnumItem AdUIEventType.WhyThisAdClicked : 6
+Added Enum HapticEffectType
+Added EnumItem HapticEffectType.UIHover : 0
+Added EnumItem HapticEffectType.UIClick : 1
+Added EnumItem HapticEffectType.UINotification : 2
+Added EnumItem HapticEffectType.GameplayExplosion : 3
+Added EnumItem HapticEffectType.GameplayCollision : 4
 
-Added Tag [CustomLuaState] to Function CollectionService:AddTag
-Added Tag [CustomLuaState] to Function CollectionService:GetTags
-Added Tag [CustomLuaState] to Function CollectionService:HasTag
-Added Tag [CustomLuaState] to Function CollectionService:RemoveTag
-Added Tag [Deprecated] to Property UserInputService.LegacyInputEventsEnabled
+Added Enum VRControllerModelMode
+Added EnumItem VRControllerModelMode.Disabled : 0
+Added EnumItem VRControllerModelMode.Transparent : 1
 
-Changed the return-type of Function AudioAnalyzer:GetConnectedWires
-from:{ any }
-to:{ Instance }
+Added Enum VRLaserPointerMode
+Added EnumItem VRLaserPointerMode.Disabled : 0
+Added EnumItem VRLaserPointerMode.Pointer : 1
+Added EnumItem VRLaserPointerMode.DualPointer : 2
 
-Changed the return-type of Function AudioChorus:GetConnectedWires
-from:{ any }
-to:{ Instance }
+Added EnumItem AvatarGenerationError.JobNotFound : 6
 
-Changed the return-type of Function AudioCompressor:GetConnectedWires
-from:{ any }
-to:{ Instance }
+Changed the return-type of Function DataStoreService:GetDataStore
+from:GlobalDataStore
+to:DataStore
 
-Changed the return-type of Function AudioDeviceInput:GetConnectedWires
-from:{ any }
-to:{ Instance }
+Changed the return-type of Function DataStoreService:GetGlobalDataStore
+from:GlobalDataStore
+to:DataStore
 
-Changed the return-type of Function AudioDeviceOutput:GetConnectedWires
-from:{ any }
-to:{ Instance }
+Changed the value of EnumItem AvatarGenerationError.Unknown from 5 to 1
+Changed the value of EnumItem AvatarGenerationError.Timeout from 1 to 5
 
-Changed the return-type of Function AudioDistortion:GetConnectedWires
-from:{ any }
-to:{ Instance }
+Removed Class ProjectFolderService
+Removed Function ProjectFolderService:ExportScripts
+Removed Function ProjectFolderService:ImportScripts
+Removed Function ProjectFolderService:SelectFolder
+Removed Event ProjectFolderService.FileChangedAfterSync
 
-Changed the return-type of Function AudioEcho:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioEmitter:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioEmitter:GetInteractingListeners
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioEqualizer:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioFader:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioFilter:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioFlanger:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioListener:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioListener:GetInteractingEmitters
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioPitchShifter:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioPlayer:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Changed the return-type of Function AudioReverb:GetConnectedWires
-from:{ any }
-to:{ Instance }
-
-Removed Class EngineAPICloudProcessingService
-
-Removed Property AnimationRigData.articulatedJoint
-Removed Property Studio.Auto-Recovery Path
-
-Removed Function AssetImportSession:ApplySettings
-Removed Function MaterialGenerationService:UploadMaterialVariantsAsync
